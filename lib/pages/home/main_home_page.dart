@@ -83,6 +83,7 @@ class _getStartedBody extends StatelessWidget {
           text: "Our Tradespeople",
           size: 40,
         ),
+        SizedBox(height: Dimensions.height15,),
         Container(
             height: 200,
             margin: EdgeInsets.only(
