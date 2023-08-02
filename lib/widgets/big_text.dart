@@ -20,8 +20,6 @@ class BigText extends StatelessWidget {
     return Text(
       text,
       textAlign: TextAlign.center,
-      // maxLines: 1,
-      // overflow: overflow,
       style: TextStyle(
         color: color,
         fontFamily: 'Salma Pro',

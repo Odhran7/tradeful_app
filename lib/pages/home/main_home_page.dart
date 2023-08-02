@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
 import 'package:tradeful_app/widgets/alternating_text_widget.dart';
 import 'package:tradeful_app/widgets/app_column.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
@@ -49,7 +51,10 @@ class MainAppPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _logo(),
-          _getStartedBody(tradesPeople: tradesPeople, textListTrades: textListTrades, textListPlaces: textListPlaces),
+          _getStartedBody(
+              tradesPeople: tradesPeople,
+              textListTrades: textListTrades,
+              textListPlaces: textListPlaces),
         ],
       ),
       bottomNavigationBar: _getStartedButton(),
@@ -73,9 +78,12 @@ class _getStartedBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BigText(text: "Our Tradespeople", size: 40,),
+        BigText(
+          text: "Our Tradespeople",
+          size: 40,
+        ),
         Container(
-          height: 200,
+            height: 200,
             margin: EdgeInsets.only(
                 left: Dimensions.width30,
                 right: Dimensions.width30,
@@ -84,8 +92,9 @@ class _getStartedBody extends StatelessWidget {
               border: Border.all(color: AppColors.mainColor, width: 2.0),
               borderRadius: BorderRadius.circular(15),
             ),
-            child: AutoScrollingListView(tradesPeople: tradesPeople,)
-            ),
+            child: AutoScrollingListView(
+              tradesPeople: tradesPeople,
+            )),
         Container(
             padding: EdgeInsets.only(
                 top: Dimensions.height30,
@@ -148,25 +157,30 @@ class _getStartedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      margin: EdgeInsets.only(
-          left: Dimensions.width30,
-          right: Dimensions.width30,
-          bottom: Dimensions.height60),
-      padding: EdgeInsets.only(
-          top: Dimensions.height15,
-          bottom: Dimensions.height15,
-          left: Dimensions.width15,
-          right: Dimensions.width15),
-      child: Center(
-          child: BigText(
-        text: "Get Started",
-        color: AppColors.textColor,
-      )),
-      decoration: BoxDecoration(
-        color: AppColors.mainColor,
-        borderRadius: BorderRadius.circular(25),
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => OnboardingOnePage());
+      },
+      child: Container(
+        height: 100,
+        margin: EdgeInsets.only(
+            left: Dimensions.width30,
+            right: Dimensions.width30,
+            bottom: Dimensions.height60),
+        padding: EdgeInsets.only(
+            top: Dimensions.height15,
+            bottom: Dimensions.height15,
+            left: Dimensions.width15,
+            right: Dimensions.width15),
+        child: Center(
+            child: BigText(
+          text: "Get Started",
+          color: AppColors.textColor,
+        )),
+        decoration: BoxDecoration(
+          color: AppColors.mainColor,
+          borderRadius: BorderRadius.circular(25),
+        ),
       ),
     );
   }
