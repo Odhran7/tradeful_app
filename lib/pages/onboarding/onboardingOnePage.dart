@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tradeful_app/widgets/onboardingIconWidget.dart';
 import '../../utils/Dimensions.dart';
 import '../../utils/colors.dart';
+import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/big_text.dart';
 import '../../widgets/small_text.dart';
 
@@ -14,9 +15,7 @@ class OnboardingOnePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.textColor,
-        appBar: AppBar(
-          title: BigText(text: "Onboarding Flow"),
-        ),
+        appBar: AppBarOnboardingWidget(text: "Onboarding 1 of 3"),
         body: _onboardingOneBody());
   }
 }

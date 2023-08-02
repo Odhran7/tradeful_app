@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
-import '../app_column.dart';
+import 'app_column.dart';
 
 class AutoScrollingListView extends StatefulWidget {
   final List<TradesPerson> tradesPeople;
