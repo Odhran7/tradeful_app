@@ -78,59 +78,67 @@ class _getStartedBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        BigText(
-          text: "Our Tradespeople",
-          size: 40,
-        ),
-        SizedBox(height: Dimensions.height15,),
-        Container(
-            height: 220,
-            margin: EdgeInsets.only(
-                left: Dimensions.width30,
-                right: Dimensions.width30,
-                bottom: Dimensions.height30),
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.mainColor, width: 2.0),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: AutoScrollingListView(
-              tradesPeople: tradesPeople,
-            )),
-        Container(
-            padding: EdgeInsets.only(
-                top: Dimensions.height30,
-                bottom: Dimensions.height30,
-                left: Dimensions.width30,
-                right: Dimensions.width30),
-            margin: EdgeInsets.only(
-                left: Dimensions.width30, right: Dimensions.width30),
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.mainColor, width: 2.0),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Column(
-              children: [
-                BigText(text: "Connect with ", size: 25),
-                AlternatingTextWidget(
-                  textList: textListTrades,
-                  seconds: 2,
-                ),
-                BigText(text: "in", size: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AlternatingTextWidget(
-                      textList: textListPlaces,
-                      seconds: 4,
-                    ),
-                    Icon(Icons.location_pin),
-                  ],
-                )
-              ],
-            )),
-      ],
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          BigText(
+            text: "Our Tradespeople",
+            size: 40,
+            bold: true,
+          ),
+          SizedBox(height: Dimensions.height15,),
+          Container(
+
+              height: 220,
+              margin: EdgeInsets.only(
+                  left: Dimensions.width30,
+                  right: Dimensions.width30,
+                  bottom: Dimensions.height30),
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.mainColor, width: 2.0),
+                borderRadius: BorderRadius.circular(15),
+                color: AppColors.iconWhite,
+              ),
+              child: AutoScrollingListView(
+                tradesPeople: tradesPeople,
+              )),
+          Container(
+              padding: EdgeInsets.only(
+                  top: Dimensions.height30,
+                  bottom: Dimensions.height30,
+                  left: Dimensions.width15,
+                  right: Dimensions.width15),
+              margin: EdgeInsets.only(
+                  left: Dimensions.width30, right: Dimensions.width30),
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.mainColor, width: 2.0),
+                borderRadius: BorderRadius.circular(15),
+                color: AppColors.iconWhite,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  BigText(text: "Connect with ", size: 15),
+                  AlternatingTextWidget(
+                    textList: textListTrades,
+                    seconds: 2,
+                  ),
+                  BigText(text: " in ", size: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AlternatingTextWidget(
+                        textList: textListPlaces,
+                        seconds: 4,
+                      ),
+                      Icon(Icons.location_pin),
+                    ],
+                  )
+                ],
+              )),
+        ],
+      ),
     );
   }
 }

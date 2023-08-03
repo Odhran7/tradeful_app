@@ -22,5 +22,5 @@ class AppColors {
 
   // Green color
 
-  static final Color verifiedGreen = const Color(0xff7CFC00);
+  static final Color verifiedGreen = const Color(0xff00FF7F);
 }

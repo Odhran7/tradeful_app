@@ -59,7 +59,7 @@ class _AlternatingTextWidgetState extends State<AlternatingTextWidget> {
         child: BigText(
           text: widget.textList[_index],
           color: AppColors.mainColor,
-          size: 25,
+          size: 15,
         ));
   }
 }

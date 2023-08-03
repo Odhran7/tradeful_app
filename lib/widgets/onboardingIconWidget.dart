@@ -32,6 +32,7 @@ class OnbaordingIconWidget extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: AppColors.mainColor, width: 2.0),
           borderRadius: BorderRadius.circular(15),
+          color: AppColors.iconWhite,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
