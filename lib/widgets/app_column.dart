@@ -106,7 +106,7 @@ class AppColumn extends StatelessWidget {
               IconAndTextWidget(
                 icon: Icons.verified,
                 text: "Verified",
-                iconColor: AppColors.mainColor,
+                iconColor: AppColors.verifiedGreen,
               ),
             ],
           ),

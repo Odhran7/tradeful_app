@@ -9,6 +9,7 @@ import 'package:tradeful_app/widgets/app_column.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
 import '../../utils/colors.dart';
 import '../../utils/dimensions.dart';
+import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/auto_scroll_widget.dart';
 import '../../widgets/small_text.dart';
 
@@ -85,7 +86,7 @@ class _getStartedBody extends StatelessWidget {
         ),
         SizedBox(height: Dimensions.height15,),
         Container(
-            height: 200,
+            height: 220,
             margin: EdgeInsets.only(
                 left: Dimensions.width30,
                 right: Dimensions.width30,
@@ -111,12 +112,12 @@ class _getStartedBody extends StatelessWidget {
             ),
             child: Column(
               children: [
-                BigText(text: "Connect with ", size: 30),
+                BigText(text: "Connect with ", size: 25),
                 AlternatingTextWidget(
                   textList: textListTrades,
                   seconds: 2,
                 ),
-                BigText(text: "in", size: 30),
+                BigText(text: "in", size: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -142,6 +143,8 @@ class _logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 150,
+      height: 150,
       child: Image.asset('assets/images/logoJpg.jpg'),
       margin: EdgeInsets.only(
           top: Dimensions.width30,

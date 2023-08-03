@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 class AppColors {
-  
   // Main
 
   static final Color mainColor = const Color(0xff1c1c1c);
@@ -20,4 +19,8 @@ class AppColors {
   // Icon colors
 
   static final Color iconWhite = const Color(0xfff3f3f3);
+
+  // Green color
+
+  static final Color verifiedGreen = const Color(0xff7CFC00);
 }

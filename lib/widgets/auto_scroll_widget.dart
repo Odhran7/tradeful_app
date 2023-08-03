@@ -47,6 +47,7 @@ void _startAutoScroll() {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.only(top: Dimensions.height15),
       controller: _scrollController,
       itemCount: widget.tradesPeople.length,
