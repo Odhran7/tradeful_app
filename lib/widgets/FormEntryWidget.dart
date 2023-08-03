@@ -6,8 +6,10 @@ import 'big_text.dart';
 
 class FormEntryWidget extends StatelessWidget {
   final String text;
+  final IconData icon;
   Color? color;
-  FormEntryWidget({super.key, required this.text, this.color = const Color(0xffa6a6a6)});
+  FormEntryWidget(
+      {super.key, required this.text, this.color = const Color(0xffa6a6a6), required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class FormEntryWidget extends StatelessWidget {
             decoration: InputDecoration(
               border: InputBorder.none,
               prefixIcon: Icon(
-                Icons.lock,
+                icon,
                 color: Colors.white,
               ),
               hintText: text,
