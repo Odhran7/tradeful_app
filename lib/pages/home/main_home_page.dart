@@ -124,7 +124,7 @@ class _getStartedBody extends StatelessWidget {
                     textList: textListTrades,
                     seconds: 2,
                   ),
-                  BigText(text: " in ", size: 15),
+                  BigText(text: "in ", size: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

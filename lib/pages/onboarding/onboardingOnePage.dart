@@ -31,7 +31,7 @@ class _onboardingOneBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
@@ -39,10 +39,6 @@ class _onboardingOneBody extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              BigText(
-                text: "Step 1 of 3",
-                size: 40,
-              ),
               BigText(
                 text: "Select A Role",
                 size: 50,
@@ -53,25 +49,51 @@ class _onboardingOneBody extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        width: 125,
-                        height: 125,
-                        child: Image.asset(
-                          "assets/images/tradespersonOnboardingOne.jpeg",
-                          fit: BoxFit.cover,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 6,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          width: 125,
+                          height: 125,
+                          child: Image.asset(
+                            "assets/images/tradespersonOnboardingOne.jpeg",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        width: 125,
-                        height: 125,
-                        child: Image.asset(
-                          "assets/images/homeownerOnboardingOne.jpeg",
-                          fit: BoxFit.cover,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 6,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          width: 125,
+                          height: 125,
+                          child: Image.asset(
+                            "assets/images/homeownerOnboardingOne.jpeg",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
