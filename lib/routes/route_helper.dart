@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingThreePage.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingTradesPersonTwoPage.dart';
 import '../pages/home/main_home_page.dart';
 import '../pages/onboarding/onboardingHomeownerTwoPage.dart';
@@ -10,6 +11,7 @@ class RouteHelper {
   static const String onboardingTwoTradesPerson =
       '/onboarding-two-tradesperson';
   static const String onboardingTwoHomeOwner = '/onboarding-two-homeowner';
+  static const String onboardingThree = '/onboarding-three';
 
   // Initial Routes
 
@@ -17,6 +19,7 @@ class RouteHelper {
   static String getOnboardingOne() => '$onboardingOne';
   static String getOnboardingTwoTradesPerson() => '$onboardingTwoTradesPerson';
   static String getOnboardingTwoHomeOwner() => '$onboardingTwoHomeOwner';
+  static String getOnboardingThree() => '$onboardingThree';
 
   static List<GetPage> routes = [
     GetPage(
@@ -35,5 +38,9 @@ class RouteHelper {
       name: onboardingTwoHomeOwner,
       page: () => OnboardingHomeOwnerTwoPage(),
     ),
+    GetPage(
+      name: onboardingThree,
+      page: () => OnboardingThreePage(),
+    ), 
   ];
 }

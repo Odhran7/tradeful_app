@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tradeful_app/widgets/onboardingIconWidget.dart';
 import '../../utils/Dimensions.dart';
 import '../../utils/colors.dart';
 import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/big_text.dart';
+import '../../widgets/small_text.dart';
 import 'onboardingHomeownerTwoPage.dart';
 import 'onboardingTradesPersonTwoPage.dart';
 
@@ -16,7 +18,7 @@ class OnboardingOnePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.textColor,
-        appBar: AppBarOnboardingWidget(text: "Onboarding 1 of 3"),
+        appBar: AppBarOnboardingWidget(text: "Onboarding"),
         body: _onboardingOneBody());
   }
 }
