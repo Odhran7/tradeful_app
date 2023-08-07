@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
-
 import '../../utils/Dimensions.dart';
 import '../../utils/colors.dart';
 import '../../widgets/FormEntryWidget.dart';
@@ -18,97 +17,86 @@ class OnboardingHomeOwnerTwoPage extends StatefulWidget {
 class _OnboardingHomeOwnerTwoPageState
     extends State<OnboardingHomeOwnerTwoPage> {
   bool _isChecked = false;
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBarOnboardingWidget(text: "Onboarding 2 of 3"),
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            _topImage(),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
+    return Scaffold(
+      appBar: AppBarOnboardingWidget(text: "Onboarding 2 of 3"),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          _topImage(),
+          _ssoWidget(),
+          Expanded(
+            child: _formWidget(),
+
+          ),
+        ],
+      ),
+    );
+  }
+
+
+  Widget _formWidget() {
+    return Container(
+      padding: const EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+      ),
+      child: ListView(
+        children: [
+          FormEntryWidget(text: "Name", icon: Icons.account_circle_rounded),
+          const SizedBox(height: 15),
+          FormEntryWidget(text: "Email", icon: Icons.email_outlined),
+          const SizedBox(height: 15),
+          FormEntryWidget(text: "Phone Number", icon: Icons.phone),
+          const SizedBox(height: 15),
+          FormEntryWidget(text: "Password", icon: Icons.lock),
+          const SizedBox(height: 15),
+          FormEntryWidget(text: "Confirm Password", icon: Icons.lock),
+          const SizedBox(height: 15),
+          Row(
+            children: <Widget>[
+              Checkbox(
+                value: _isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _isChecked = value!;
+                  });
+                },
+                activeColor: AppColors.mainGray,
+              ),
+              Text(
+                'I am a commercial entity (priority)',
+                style: TextStyle(fontSize: 16.0),
+              ),
+            ],
+          ),
+          const SizedBox(height: 35),
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: AppColors.mainGray,
+              ),
+              child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 10),
-                        Center(
-                          child: BigText(
-                            text: '- Sign Up with -',
-                            color: AppColors.mainGray,
-                            size: 20,
-                            bold: true,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        _ssoWidget(),
-                        FormEntryWidget(text: "Name", icon: Icons.account_circle_rounded),
-                        const SizedBox(height: 15),
-                        FormEntryWidget(text: "Email", icon: Icons.email_outlined),
-                        const SizedBox(height: 15),
-                        FormEntryWidget(text: "Phone Number", icon: Icons.phone),
-                        const SizedBox(height: 15),
-                        FormEntryWidget(text: "Password", icon: Icons.lock),
-                        const SizedBox(height: 15),
-                        FormEntryWidget(text: "Confirm Password", icon: Icons.lock),
-                        const SizedBox(height: 15),
-                        Row(
-                          children: <Widget>[
-                            Checkbox(
-                              value: _isChecked,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  _isChecked = value!;
-                                });
-                              },
-                              activeColor: AppColors.mainGray,
-                            ),
-                            Text(
-                              'I am a commercial entity (priority)',
-                              style: TextStyle(fontSize: 16.0),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 35),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: AppColors.mainGray,
-                            ),
-                            child: Center(
-                              child: Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: BigText(
-                                  text: 'Sign Up',
-                                  color: AppColors.textColor,
-                                  size: 20,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  padding: EdgeInsets.all(10.0),
+                  child: BigText(
+                    text: 'Sign Up',
+                    color: AppColors.textColor,
+                    size: 20,
                   ),
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -116,92 +104,78 @@ class _OnboardingHomeOwnerTwoPageState
 
 class _topImage extends StatelessWidget {
   const _topImage({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-          left: Dimensions.width30,
-          right: Dimensions.width30,
-          top: Dimensions.height30,
-          bottom: Dimensions.height30),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+        image: DecorationImage(
+          image: AssetImage('assets/images/homeownerOnboardingOne.jpeg'),
+          fit: BoxFit.cover,
+        ),
       ),
-      width: 250,
-      height: 225,
-      child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image.asset(
-              'assets/images/homeownerOnboardingOne.jpeg',
-              fit: BoxFit.cover)),
     );
   }
 }
 
 class _ssoWidget extends StatelessWidget {
   const _ssoWidget({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            width: 80,
-            height: 80,
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white38,
-            ),
-            child: Image.asset(
-              'assets/images/google.png',
-              colorBlendMode: BlendMode.saturation,
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          const SizedBox(height: 10),
+          Center(
+            child: BigText(
+              text: '- Sign Up with -',
+              color: AppColors.mainGray,
+              size: 20,
+              bold: true,
             ),
           ),
-        ),
-        const SizedBox(width: 50),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            width: 80,
-            height: 80,
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white38,
-            ),
-            child: Image.asset(
-              'assets/images/facebook.png',
-              colorBlendMode: BlendMode.saturation,
-            ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _ssoButton('assets/images/google.png'),
+              const SizedBox(width: 40),
+              _ssoButton('assets/images/facebook.png'),
+              const SizedBox(width: 40),
+              _ssoButton('assets/images/apple.png'),
+            ],
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _ssoButton(String assetName) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        width: 80,
+        height: 80,
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white38,
         ),
-        const SizedBox(width: 50),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            width: 80,
-            height: 80,
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white38,
-            ),
-            child: Image.asset(
-              'assets/images/apple.png',
-              colorBlendMode: BlendMode.saturation,
-            ),
-          ),
+        child: Image.asset(
+          assetName,
+          colorBlendMode: BlendMode.saturation,
         ),
-      ],
+      ),
     );
   }
 }

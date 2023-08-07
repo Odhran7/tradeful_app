@@ -40,7 +40,7 @@ class OnbaordingIconWidget extends StatelessWidget {
           children: [
             Column(
               children: [
-                BigText(text: mainTitle, size: 30),
+                BigText(text: mainTitle, size: 21, bold: true,),
                 SizedBox(height: Dimensions.height15),
                 SmallText(text: subtitle, size: 16)
               ],

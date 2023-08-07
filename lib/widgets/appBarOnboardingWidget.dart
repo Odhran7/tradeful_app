@@ -18,6 +18,7 @@ class AppBarOnboardingWidget extends StatelessWidget implements PreferredSizeWid
           BigText(text: text),
         ],
       ),
+      backgroundColor: Colors.white,
     );
   }
 

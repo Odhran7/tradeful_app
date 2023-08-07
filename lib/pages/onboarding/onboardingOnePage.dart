@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tradeful_app/widgets/onboardingIconWidget.dart';
 import '../../utils/Dimensions.dart';
 import '../../utils/colors.dart';
 import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/big_text.dart';
-import '../../widgets/small_text.dart';
 import 'onboardingHomeownerTwoPage.dart';
 import 'onboardingTradesPersonTwoPage.dart';
 
@@ -110,7 +108,7 @@ class _onboardingOneBody extends StatelessWidget {
                 Get.to(() => OnboardingHomeOwnerTwoPage());
               },
               child: OnbaordingIconWidget(
-                  mainTitle: "I need help",
+                  mainTitle: "I am looking for a trade",
                   subtitle: "I am looking for a service",
                   svgPath: "assets/images/customer.svg"),
             ),
@@ -119,8 +117,8 @@ class _onboardingOneBody extends StatelessWidget {
                 Get.to(() => OnboardingTradesPersonTwoPage());
               },
               child: OnbaordingIconWidget(
-                  mainTitle: "I can help",
-                  subtitle: "I am looking to fix issues",
+                  mainTitle: "I am a tradesperson",
+                  subtitle: "I am offering a service",
                   svgPath: "assets/images/tradesperson.svg"),
             ),
           ],
