@@ -6,6 +6,8 @@ import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingThreePageTradesPerson.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingTradesPersonTwoPage.dart';
+import 'package:tradeful_app/pages/onboarding/reivew_onboarding_homeowner_page.dart';
+import 'package:tradeful_app/pages/onboarding/reivew_onboarding_tradesmen_page.dart';
 import '../pages/home/main_home_page.dart';
 import '../pages/onboarding/onboardingHomeownerTwoPage.dart';
 import '../pages/onboarding/onboardingThreeHomeOwner.dart';
@@ -42,6 +44,8 @@ class RouteHelper {
   static String getOnboardingFinalTradesPerson() =>
       '$onboardingFinalTradesPerson';
   static String getOnboardingFinalHomeOwner() => '$onboardingFinalHomeOwner';
+  static String getOnboardingReviewHomeOwner() => '$onboardingReviewHomeOwner';
+  static String getOnboardingReviewTradesMen() => '$onboardingReviewTradesMen';
 
   // App Routes
 
@@ -80,6 +84,14 @@ class RouteHelper {
     GetPage(
       name: onboardingFinalTradesPerson,
       page: () => OnboardingFinalTradesPersonPage(),
+    ),
+    GetPage(
+      name: onboardingReviewHomeOwner,
+      page: () => ReviewOnboardingHomeOwnerPage(),
+    ),
+    GetPage(
+      name: onboardingReviewTradesMen,
+      page: () => ReviewOnboardingTradesMenPage(),
     ),
 
     // App Get routes

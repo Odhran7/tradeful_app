@@ -5,6 +5,7 @@ import 'package:tradeful_app/pages/onboarding/onboardingFinalHomeowner.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingThreeHomeOwner.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingThreePageTradesPerson.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
+import 'package:tradeful_app/widgets/big_button_widget.dart';
 import '../../utils/Dimensions.dart';
 import '../../utils/colors.dart';
 import '../../widgets/FormEntryWidget.dart';
@@ -117,28 +118,8 @@ class _OnboardingHomeOwnerTwoPageState
             ],
           ),
           const SizedBox(height: 35),
-          GestureDetector(
-            onTap: () {
-              Get.to(() => OnboardingThreeHomeOwnerPage());
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: AppColors.mainGray,
-              ),
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: BigText(
-                    text: 'Sign Up',
-                    color: AppColors.textColor,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+            BigButtonWidget(text: "Sign Up", page: OnboardingThreeHomeOwnerPage())
+          ],
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tradeful_app/pages/onboarding/reivew_onboarding_homeowner_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
 import 'package:tradeful_app/widgets/app_column.dart';
@@ -98,7 +99,7 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
                             )));
                   },
                 )),
-                BigButtonWidget(text: "Review", page: page)
+                BigButtonWidget(text: "Review", page: ReviewOnboardingHomeOwnerPage())
           ],
         ),
       ),

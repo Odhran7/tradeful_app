@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tradeful_app/pages/onboarding/reivew_onboarding_tradesmen_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
 import 'package:tradeful_app/widgets/app_column.dart';
@@ -8,6 +9,7 @@ import 'package:tradeful_app/widgets/big_text.dart';
 import '../../models/tradetypeModel.dart';
 import '../../utils/colors.dart';
 import '../../widgets/app_column_tradesmen_widget.dart';
+import '../../widgets/big_button_widget.dart';
 
 class OnboardingFinalTradesPersonPage extends StatelessWidget {
   const OnboardingFinalTradesPersonPage({super.key});
@@ -96,6 +98,7 @@ class OnboardingFinalTradesPersonPage extends StatelessWidget {
                             )));
                   },
                 )),
+                BigButtonWidget(text: "Review", page: ReviewOnboardingTradesMenPage())
           ],
         ),
       ),
