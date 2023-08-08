@@ -16,7 +16,7 @@ class EndUserLicenseAgreementPage extends StatelessWidget {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(Dimensions.height15),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             BigText(text: "End User License Agreement (EULA) for Tradeful App", bold: true, size: 35),
             SmallText(text: "Last Updated: [7/8/23]"),

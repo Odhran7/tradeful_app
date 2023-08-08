@@ -56,8 +56,6 @@ class _OnboardingHomeOwnerTwoPageState
           const SizedBox(height: 15),
           FormEntryWidget(text: "Email", icon: Icons.email_outlined),
           const SizedBox(height: 15),
-          FormEntryWidget(text: "Phone Number", icon: Icons.phone),
-          const SizedBox(height: 15),
           FormEntryWidget(text: "Password", icon: Icons.lock),
           const SizedBox(height: 15),
           FormEntryWidget(text: "Confirm Password", icon: Icons.lock),
