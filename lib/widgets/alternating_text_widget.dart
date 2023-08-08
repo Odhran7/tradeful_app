@@ -8,12 +8,14 @@ class AlternatingTextWidget extends StatefulWidget {
   Color? color;
   final List<String> textList;
   final int seconds;
+  final double size;
 
   AlternatingTextWidget({
     super.key,
     this.color = const Color(0xfffefffb),
     required this.textList,
     required this.seconds,
+    this.size = 15,
   });
 
   @override
@@ -59,7 +61,7 @@ class _AlternatingTextWidgetState extends State<AlternatingTextWidget> {
         child: BigText(
           text: widget.textList[_index],
           color: AppColors.mainColor,
-          size: 15,
+          size: widget.size,
         ));
   }
 }

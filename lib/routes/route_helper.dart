@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
+import 'package:tradeful_app/pages/app/tradesmen/home/tradesmen_dashboard.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingFinalHomeowner.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
@@ -20,6 +22,13 @@ class RouteHelper {
   static const String onboardingFinalHomeOwner = '/onboarding-final-homeonwer';
   static const String onboardingFinalTradesPerson =
       '/onboarding-final-homeowner';
+  static const String onboardingReviewTradesMen = '/review-tradesmen';
+  static const String onboardingReviewHomeOwner = 'review-homeowner';
+
+  // App
+
+  static const String homeOwnerDashboard = '/dashboard-homeowner';
+  static const String tradesMenDashboard = '/dashbaord-tradesmen';
 
   // Initial Routes
 
@@ -33,6 +42,11 @@ class RouteHelper {
   static String getOnboardingFinalTradesPerson() =>
       '$onboardingFinalTradesPerson';
   static String getOnboardingFinalHomeOwner() => '$onboardingFinalHomeOwner';
+
+  // App Routes
+
+  static String getHomeOwnerDashboard() => '$homeOwnerDashboard';
+  static String getTradesMenDashboard() => '$tradesMenDashboard';
 
   static List<GetPage> routes = [
     GetPage(
@@ -66,6 +80,16 @@ class RouteHelper {
     GetPage(
       name: onboardingFinalTradesPerson,
       page: () => OnboardingFinalTradesPersonPage(),
+    ),
+
+    // App Get routes
+    GetPage(
+      name: homeOwnerDashboard,
+      page: () => HomeOwnerDashboardPage(),
+    ),
+    GetPage(
+      name: tradesMenDashboard,
+      page: () => TradesMenDashboardPage(),
     ),
   ];
 }

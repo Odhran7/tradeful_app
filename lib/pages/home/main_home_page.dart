@@ -1,17 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingTitlePage.dart';
 import 'package:tradeful_app/widgets/alternating_text_widget.dart';
-import 'package:tradeful_app/widgets/app_column.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
+import '../../models/tradespeople.dart';
 import '../../utils/colors.dart';
 import '../../utils/dimensions.dart';
-import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/auto_scroll_widget.dart';
-import '../../widgets/small_text.dart';
 
 class MainAppPage extends StatelessWidget {
   const MainAppPage({super.key});
