@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingThreePage.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingFinalHomeowner.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingThreeHomeOwner.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingThreePageTradesPerson.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
 import '../../utils/Dimensions.dart';
 import '../../utils/colors.dart';
@@ -117,7 +119,7 @@ class _OnboardingHomeOwnerTwoPageState
           const SizedBox(height: 35),
           GestureDetector(
             onTap: () {
-              Get.to(() => OnboardingThreePage());
+              Get.to(() => OnboardingThreeHomeOwnerPage());
             },
             child: Container(
               decoration: BoxDecoration(

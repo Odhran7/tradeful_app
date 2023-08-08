@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/legal/endUserLicenseAgreementPage.dart';
 import 'package:tradeful_app/pages/legal/termsAndConditionsPage.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/FormEntryWidget.dart';
 import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/big_text.dart';
 import '../../widgets/small_text.dart';
-import 'onboardingThreePage.dart';
+import 'onboardingThreePageTradesPerson.dart';
 
 class OnboardingTradesPersonTwoPage extends StatefulWidget {
   const OnboardingTradesPersonTwoPage({super.key});
@@ -92,7 +93,7 @@ class _OnboardingTradesPersonTwoPageState
           const SizedBox(height: 35),
           GestureDetector(
             onTap: () {
-              Get.to(() => OnboardingThreePage());
+              Get.to(() => OnboardingThreeTradesPersonPage());
             },
             child: Container(
               decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
 import 'package:tradeful_app/utils/Dimensions.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
@@ -8,8 +9,8 @@ import 'package:tradeful_app/widgets/google_map_widget.dart';
 import '../../utils/colors.dart';
 import '../../widgets/FormEntryWidget.dart';
 
-class OnboardingThreePage extends StatelessWidget {
-  const OnboardingThreePage({super.key});
+class OnboardingThreeTradesPersonPage extends StatelessWidget {
+  const OnboardingThreeTradesPersonPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class OnboardingThreePage extends StatelessWidget {
             SizedBox(height: Dimensions.height30),
              GestureDetector(
             onTap: () {
-              Get.to(() => OnboardingThreePage());
+              Get.to(() => OnboardingFinalTradesPersonPage());
             },
             child: Container(
               decoration: BoxDecoration(
