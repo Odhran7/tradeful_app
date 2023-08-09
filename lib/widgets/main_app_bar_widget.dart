@@ -6,7 +6,8 @@ import '../utils/colors.dart';
 
 class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String profileIcon;
-  const MainAppBarWidget({Key? key, required this.profileIcon}) : super(key: key);
+  const MainAppBarWidget({Key? key, required this.profileIcon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,22 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       color: Colors.white,
       child: Container(
-        padding: EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width30),
+        padding: EdgeInsets.only(
+            left: Dimensions.width30, right: Dimensions.width30),
         height: 100 + statusBarHeight,
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5), // Shadow color
+              spreadRadius: 1, // Spread radius
+              blurRadius: 5, // Blur radius
+              offset: Offset(0, 3), // Shadow position
+            ),
+          ],
           color: AppColors.buttonColor,
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
           ),
         ),
         child: SafeArea(
@@ -36,11 +46,12 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                     color: AppColors.textColor,
                     width: 2,
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(profileIcon, fit: BoxFit.contain, height: 62),
+                  borderRadius: BorderRadius.circular(30),
+                  child:
+                      Image.asset(profileIcon, fit: BoxFit.contain, height: 62),
                 ),
               ),
               SizedBox(width: 8),
@@ -53,8 +64,14 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SmallText(
-                            text: "Current Location", color: AppColors.textColor, size: 14),
-                        Icon(Icons.arrow_drop_down, color: AppColors.textColor, size: 24,),
+                            text: "Current Location",
+                            color: AppColors.textColor,
+                            size: 14),
+                        Icon(
+                          Icons.arrow_drop_down,
+                          color: AppColors.textColor,
+                          size: 24,
+                        ),
                       ],
                     ),
                     SizedBox(height: 2),
@@ -79,5 +96,8 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(62 + MediaQueryData.fromWindow(WidgetsBinding.instance!.window).padding.top); // considering the status bar height
+  Size get preferredSize => Size.fromHeight(62 +
+      MediaQueryData.fromWindow(WidgetsBinding.instance!.window)
+          .padding
+          .top); // considering the status bar height
 }
