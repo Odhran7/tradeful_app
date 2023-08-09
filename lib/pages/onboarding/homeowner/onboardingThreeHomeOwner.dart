@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingFinalHomeowner.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
+import 'package:tradeful_app/pages/onboarding/homeowner/OTP_verification_homeowner.dart';
+import 'package:tradeful_app/pages/onboarding/homeowner/onboardingFinalHomeowner.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingFinalTradesPerson.dart';
 import 'package:tradeful_app/utils/Dimensions.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
+import 'package:tradeful_app/widgets/big_button_stateful_widget.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
 import 'package:tradeful_app/widgets/google_map_widget.dart';
 
-import '../../utils/colors.dart';
-import '../../widgets/FormEntryWidget.dart';
+import '../../../utils/colors.dart';
+import '../../../widgets/FormEntryWidget.dart';
 
 class OnboardingThreeHomeOwnerPage extends StatelessWidget {
   const OnboardingThreeHomeOwnerPage({super.key});
@@ -27,27 +29,7 @@ class OnboardingThreeHomeOwnerPage extends StatelessWidget {
             SizedBox(height: Dimensions.height30),
             FormEntryWidget(text: "Phone Number", icon: Icons.phone),
             SizedBox(height: Dimensions.height30),
-             GestureDetector(
-            onTap: () {
-              Get.to(() => OnboardingFinalHomeOwnerPage());
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: AppColors.mainGray,
-              ),
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: BigText(
-                    text: 'Next',
-                    color: AppColors.textColor,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
-          ),
+            BigButtonStatelessWidget(text: "Next", page: OTPVerificationHomeOwnerPage()),
           ],
         ),
       ),

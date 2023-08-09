@@ -14,6 +14,7 @@ dependencies:
   flutter_svg: ^2.0.7
   google_maps_flutter: ^2.4.0
   location: ^5.0.2+1
+  country_code_picker: ^3.0.0
 
 
 dev_dependencies:

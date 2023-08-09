@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:tradeful_app/widgets/alternating_text_widget.dart';
+import '../pages/onboarding/tradesperson/reivew_onboarding_tradesmen_page.dart';
 import '../utils/colors.dart';
 import '../utils/dimensions.dart';
+import 'big_button_stateless_widget.dart';
 import 'big_text.dart';
 import 'icon_and_text.dart';
 import 'small_text.dart';
@@ -98,7 +99,7 @@ class AppColumnTradesMenWidget extends StatelessWidget {
           SizedBox(
             height: Dimensions.height15,
           ),
-
+          BigButtonWidget(text: "Review", page: ReviewOnboardingTradesMenPage())
         ],
       ),
     );

@@ -21,7 +21,8 @@ class AppColors {
 
   static final Color iconWhite = const Color(0xfff3f3f3);
 
-  // Green color
+  // Green colors
 
   static final Color verifiedGreen = const Color(0xff00FF7F);
+  static final Color buttonColor = const Color(0xff8be381);
 }

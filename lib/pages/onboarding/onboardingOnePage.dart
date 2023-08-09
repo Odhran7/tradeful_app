@@ -8,8 +8,8 @@ import '../../utils/colors.dart';
 import '../../widgets/appBarOnboardingWidget.dart';
 import '../../widgets/big_text.dart';
 import '../../widgets/small_text.dart';
-import 'onboardingHomeownerTwoPage.dart';
-import 'onboardingTradesPersonTwoPage.dart';
+import 'homeowner/onboardingHomeownerTwoPage.dart';
+import 'tradesperson/onboardingTradesPersonTwoPage.dart';
 
 class OnboardingOnePage extends StatelessWidget {
   const OnboardingOnePage({super.key});

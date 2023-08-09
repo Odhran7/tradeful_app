@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/OTP_verification_tradesperson.dart';
 import 'package:tradeful_app/utils/Dimensions.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
-import 'package:tradeful_app/widgets/big_button_widget.dart';
+import 'package:tradeful_app/widgets/big_button_stateful_widget.dart';
+import 'package:tradeful_app/widgets/big_button_stateless_widget.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
 import 'package:tradeful_app/widgets/google_map_widget.dart';
-
-import '../../utils/colors.dart';
-import '../../widgets/FormEntryWidget.dart';
+import '../../../widgets/FormEntryWidget.dart';
 
 class OnboardingThreeTradesPersonPage extends StatelessWidget {
   const OnboardingThreeTradesPersonPage({super.key});
@@ -27,7 +25,7 @@ class OnboardingThreeTradesPersonPage extends StatelessWidget {
             SizedBox(height: Dimensions.height30),
             FormEntryWidget(text: "Phone Number", icon: Icons.phone),
             SizedBox(height: Dimensions.height30),
-            BigButtonWidget(text: "Next", page: OnboardingFinalTradesPersonPage())
+            BigButtonStatelessWidget(text: "Next", page: OTPVerificationTradesPersonPage())
           ],
         ),
       ),

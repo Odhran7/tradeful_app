@@ -1,16 +1,18 @@
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
 import 'package:tradeful_app/pages/app/tradesmen/home/tradesmen_dashboard.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingFinalHomeowner.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingFinalTradesPerson.dart';
+import 'package:tradeful_app/pages/onboarding/homeowner/OTP_verification_homeowner.dart';
+import 'package:tradeful_app/pages/onboarding/homeowner/onboardingFinalHomeowner.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingFinalTradesPerson.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingThreePageTradesPerson.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingTradesPersonTwoPage.dart';
-import 'package:tradeful_app/pages/onboarding/reivew_onboarding_homeowner_page.dart';
-import 'package:tradeful_app/pages/onboarding/reivew_onboarding_tradesmen_page.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingThreePageTradesPerson.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingTradesPersonTwoPage.dart';
+import 'package:tradeful_app/pages/onboarding/homeowner/reivew_onboarding_homeowner_page.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/reivew_onboarding_tradesmen_page.dart';
 import '../pages/home/main_home_page.dart';
-import '../pages/onboarding/onboardingHomeownerTwoPage.dart';
-import '../pages/onboarding/onboardingThreeHomeOwner.dart';
+import '../pages/onboarding/homeowner/onboardingHomeownerTwoPage.dart';
+import '../pages/onboarding/homeowner/onboardingThreeHomeOwner.dart';
+import '../pages/onboarding/tradesperson/OTP_verification_tradesperson.dart';
 
 class RouteHelper {
   static const String initial = '/';
@@ -24,8 +26,10 @@ class RouteHelper {
   static const String onboardingFinalHomeOwner = '/onboarding-final-homeonwer';
   static const String onboardingFinalTradesPerson =
       '/onboarding-final-homeowner';
+  static const String onbordingOTPVTradesMenVerification = '/onboarding-verify-tradesperson';
+  static const String onbordingOTPVHomeOwnerVerification = '/onboarding-verify-homeowner';
   static const String onboardingReviewTradesMen = '/review-tradesmen';
-  static const String onboardingReviewHomeOwner = 'review-homeowner';
+  static const String onboardingReviewHomeOwner = '/review-homeowner';
 
   // App
 
@@ -44,6 +48,8 @@ class RouteHelper {
   static String getOnboardingFinalTradesPerson() =>
       '$onboardingFinalTradesPerson';
   static String getOnboardingFinalHomeOwner() => '$onboardingFinalHomeOwner';
+  static String getOnbordingOTPTradesMenVerification() => '$onbordingOTPVTradesMenVerification';
+  static String getOnbordingOTPHomeOwnerVerification() => '$onbordingOTPVHomeOwnerVerification';
   static String getOnboardingReviewHomeOwner() => '$onboardingReviewHomeOwner';
   static String getOnboardingReviewTradesMen() => '$onboardingReviewTradesMen';
 
@@ -84,6 +90,14 @@ class RouteHelper {
     GetPage(
       name: onboardingFinalTradesPerson,
       page: () => OnboardingFinalTradesPersonPage(),
+    ),
+    GetPage(
+      name: onbordingOTPVTradesMenVerification,
+      page: () => OTPVerificationTradesPersonPage(),
+    ),
+      GetPage(
+      name: onbordingOTPVHomeOwnerVerification,
+      page: () => OTPVerificationHomeOwnerPage(),
     ),
     GetPage(
       name: onboardingReviewHomeOwner,

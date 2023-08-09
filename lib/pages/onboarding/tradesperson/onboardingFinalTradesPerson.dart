@@ -1,19 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tradeful_app/pages/onboarding/reivew_onboarding_homeowner_page.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/reivew_onboarding_tradesmen_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
 import 'package:tradeful_app/widgets/app_column.dart';
-import 'package:tradeful_app/widgets/big_button_widget.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
 
-import '../../models/tradetypeModel.dart';
-import '../../utils/colors.dart';
-import '../../widgets/app_column_homeowner_widget.dart';
-import '../../widgets/app_column_tradesmen_widget.dart';
+import '../../../models/tradetypeModel.dart';
+import '../../../utils/colors.dart';
+import '../../../widgets/app_column_tradesmen_widget.dart';
+import '../../../widgets/big_button_stateless_widget.dart';
 
-class OnboardingFinalHomeOwnerPage extends StatelessWidget {
-  const OnboardingFinalHomeOwnerPage({super.key});
+class OnboardingFinalTradesPersonPage extends StatelessWidget {
+  const OnboardingFinalTradesPersonPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +29,14 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
         'assets/images/plumber_icon.svg',
         '56',
         '153',
-        ['Leak', 'Clogged Drain', 'Install Fixtures'],
+        ['Leak', 'Clogged Drain', 'Fixtures'],
       ),
       Tradetype(
         'Carpenter',
         'assets/images/carpenter_icon.svg',
         '48',
         '100',
-        ['Custom build', 'Repairs', 'Internal Fittings'],
+        ['Custom', 'Repairs', 'Fittings'],
       ),
       Tradetype(
         'Welder',
@@ -56,11 +55,11 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBarOnboardingWidget(text: "Homeowner 3 of 3"),
+      appBar: AppBarOnboardingWidget(text: "Tradesperson 3 of 3"),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            BigText(text: "I'm looking for: ", size: 30, bold: true),
+            BigText(text: "Choose your trade: ", size: 30, bold: true),
             Container(
               padding: EdgeInsets.only(top: Dimensions.height15, bottom: Dimensions.height15),
               margin: EdgeInsets.only(bottom: Dimensions.height60, top: Dimensions.height60, left: Dimensions.width30, right: Dimensions.width30),
@@ -89,7 +88,7 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(color: Colors.black, width: 1.0)
                               ),
-                              child: AppColumnHomeOwnerWidget(
+                              child: AppColumnTradesMenWidget(
                                 tradeType: trade.tradeType,
                                 svgIconPath: trade.svgIconPath,
                                 numType: trade.numType,
@@ -99,7 +98,7 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
                             )));
                   },
                 )),
-                BigButtonWidget(text: "Review", page: ReviewOnboardingHomeOwnerPage())
+                
           ],
         ),
       ),

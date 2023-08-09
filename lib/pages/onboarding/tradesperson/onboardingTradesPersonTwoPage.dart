@@ -1,35 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingFinalHomeowner.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingThreeHomeOwner.dart';
-import 'package:tradeful_app/pages/onboarding/onboardingThreePageTradesPerson.dart';
-import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
-import 'package:tradeful_app/widgets/big_button_widget.dart';
-import '../../utils/Dimensions.dart';
-import '../../utils/colors.dart';
-import '../../widgets/FormEntryWidget.dart';
-import '../../widgets/big_text.dart';
-import '../../widgets/small_text.dart';
-import '../legal/endUserLicenseAgreementPage.dart';
-import '../legal/termsAndConditionsPage.dart';
+import 'package:tradeful_app/pages/legal/endUserLicenseAgreementPage.dart';
+import 'package:tradeful_app/pages/legal/termsAndConditionsPage.dart';
+import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingFinalTradesPerson.dart';
+import 'package:tradeful_app/widgets/big_button_stateless_widget.dart';
 
-class OnboardingHomeOwnerTwoPage extends StatefulWidget {
-  const OnboardingHomeOwnerTwoPage({super.key});
+import '../../../utils/colors.dart';
+import '../../../widgets/FormEntryWidget.dart';
+import '../../../widgets/appBarOnboardingWidget.dart';
+import '../../../widgets/big_text.dart';
+import '../../../widgets/small_text.dart';
+import 'onboardingThreePageTradesPerson.dart';
+
+class OnboardingTradesPersonTwoPage extends StatefulWidget {
+  const OnboardingTradesPersonTwoPage({super.key});
 
   @override
-  State<OnboardingHomeOwnerTwoPage> createState() =>
-      _OnboardingHomeOwnerTwoPageState();
+  State<OnboardingTradesPersonTwoPage> createState() =>
+      _OnboardingTradesPersonTwoPageState();
 }
 
-class _OnboardingHomeOwnerTwoPageState
-    extends State<OnboardingHomeOwnerTwoPage> {
+class _OnboardingTradesPersonTwoPageState
+    extends State<OnboardingTradesPersonTwoPage> {
   bool _isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarOnboardingWidget(text: "Homeowner 1 of 3"),
+      appBar: AppBarOnboardingWidget(text: "Tradesperson 1 of 3"),
       backgroundColor: Colors.white,
       body: Column(
         children: [
@@ -63,63 +62,38 @@ class _OnboardingHomeOwnerTwoPageState
           const SizedBox(height: 15),
           FormEntryWidget(text: "Confirm Password", icon: Icons.lock),
           const SizedBox(height: 15),
-          Column(
-            children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: _isChecked,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _isChecked = value!;
-                          });
-                        },
-                        activeColor: AppColors.mainGray,
-                      ),
-                      SmallText(
-                          text: 'I am a commercial entity (priority)',
-                          size: 12),
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Checkbox(
-                        value: _isChecked,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _isChecked = value!;
-                          });
-                        },
-                        activeColor: AppColors.mainGray,
-                      ),
-                      SmallText(text: "I agree to the ", size: 12),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => TermsAndConditionsPage());
-                        },
-                        child: SmallText(
-                            text: 'terms and conditions',
-                            color: Colors.blue,
-                            size: 12),
-                      ),
-                      SmallText(text: "and ", size: 12),
-                      GestureDetector(
-                          onTap: () {
-                            Get.to(() => EndUserLicenseAgreementPage());
-                          },
-                          child: SmallText(
-                              text: "EULA", color: Colors.blue, size: 12)),
-                    ],
-                  ),
-                ],
+          Row(
+            children: <Widget>[
+              Checkbox(
+                value: _isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _isChecked = value!;
+                  });
+                },
+                activeColor: AppColors.mainGray,
               ),
+              SmallText(text: "I agree to the "),
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => TermsAndConditionsPage());
+                },
+                child: SmallText(
+                  text: 'terms and conditions',
+                  color: Colors.blue,
+                ),
+              ),
+              SmallText(text: "and "),
+              GestureDetector(
+                  onTap: () {
+                    Get.to(() => EndUserLicenseAgreementPage());
+                  },
+                  child: SmallText(text: "EULA", color: Colors.blue,)),
             ],
           ),
           const SizedBox(height: 35),
-            BigButtonWidget(text: "Sign Up", page: OnboardingThreeHomeOwnerPage())
-          ],
+          BigButtonWidget(text: "Sign Up", page: OnboardingThreeTradesPersonPage()),
+        ],
       ),
     );
   }

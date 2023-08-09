@@ -4,21 +4,21 @@ import 'package:tradeful_app/widgets/big_text.dart';
 
 import '../utils/colors.dart';
 
-class BigButtonWidget extends StatelessWidget {
+class BigButtonStatelessWidget extends StatelessWidget {
   final String text;
-  final StatelessWidget page; // Updated type
-  const BigButtonWidget({super.key, required this.text, required this.page});
+  final StatefulWidget page; 
+  const BigButtonStatelessWidget({super.key, required this.text, required this.page});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(page); // Navigate to the page without calling as a function
+        Get.to(page);
       },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: AppColors.mainGray,
+          color: AppColors.buttonColor,
         ),
         child: Center(
           child: Padding(
