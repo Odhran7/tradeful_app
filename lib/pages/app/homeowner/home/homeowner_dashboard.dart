@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../widgets/main_app_bar_widget.dart';
+import '../../../../widgets/main_app/main_app_bar_widget.dart';
 
 class HomeOwnerDashboardPage extends StatelessWidget {
   const HomeOwnerDashboardPage({super.key});

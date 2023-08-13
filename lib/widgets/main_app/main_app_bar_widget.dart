@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/small_text.dart';
 
-import '../utils/colors.dart';
+import '../../utils/colors.dart';
 
 class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String profileIcon;
@@ -15,7 +15,7 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     final double statusBarHeight = MediaQuery.of(context).padding.top;
 
     return Container(
-      color: Colors.white,
+      color: AppColors.textColor,
       child: Container(
         padding: EdgeInsets.only(
             left: Dimensions.width30, right: Dimensions.width30),
@@ -23,10 +23,10 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5), // Shadow color
-              spreadRadius: 1, // Spread radius
-              blurRadius: 5, // Blur radius
-              offset: Offset(0, 3), // Shadow position
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 5, 
+              offset: Offset(0, 3), 
             ),
           ],
           color: AppColors.buttonColor,
