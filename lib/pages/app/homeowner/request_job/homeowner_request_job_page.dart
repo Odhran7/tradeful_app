@@ -116,7 +116,7 @@ class HomeOwnerRequestJobPage extends StatelessWidget {
                     ),
                     AttachImageWidget(),
                   SizedBox(height: 10),
-                  BigButtonWidget(text: "Post Request | €5.5", page: HomeOwnerOrdersPage(), shadow: true,)
+                  BigButtonWidget(text: "Post Request | €5.5", page: HomeOwnerOrdersPage(), shadow: true, buttonColor: AppColors.mainColor, textColor: AppColors.textColor,)
                 ],
               )),
         ));

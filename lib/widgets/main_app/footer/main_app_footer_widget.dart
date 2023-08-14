@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
+import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 
 import '../../../utils/colors.dart';
@@ -45,14 +47,34 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(Icons.home_filled,
-                          color: AppColors.buttonColor, size: 38),
-                      Icon(Icons.dashboard,
-                          color: AppColors.buttonColor, size: 42),
-                      Icon(Icons.notifications,
-                          color: AppColors.buttonColor, size: 42),
-                      Icon(Icons.message_outlined,
-                          color: AppColors.buttonColor, size: 42),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => HomeOwnerDashboardPage());
+                        },
+                        child: Icon(Icons.home_filled,
+                            color: AppColors.buttonColor, size: 38),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => HomeOwnerOrdersPage());
+                        },
+                        child: Icon(Icons.dashboard,
+                            color: AppColors.buttonColor, size: 42),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // TODO
+                        },
+                        child: Icon(Icons.notifications,
+                            color: AppColors.buttonColor, size: 42),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // TODO
+                        },
+                        child: Icon(Icons.message_outlined,
+                            color: AppColors.buttonColor, size: 42),
+                      ),
                     ],
                   ),
                 ),
@@ -78,10 +100,3 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
     );
   }
 }
-
-
-// traction - someone using the app 
-// Sign up list - email 25 
-// A1 
-// shareholder 33 - 
-// leo grnats - feasibility 
