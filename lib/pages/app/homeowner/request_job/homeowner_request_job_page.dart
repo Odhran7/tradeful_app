@@ -3,7 +3,7 @@ import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_o
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/big_button_stateful_widget.dart';
 import 'package:tradeful_app/widgets/main_app/image_media_widget.dart';
-import 'package:tradeful_app/widgets/main_app/main_app_bar_widget.dart';
+import 'package:tradeful_app/widgets/main_app/appbar/main_app_bar_widget.dart';
 import 'package:tradeful_app/widgets/small_text.dart';
 
 import '../../../../utils/colors.dart';
@@ -116,7 +116,7 @@ class HomeOwnerRequestJobPage extends StatelessWidget {
                     ),
                     AttachImageWidget(),
                   SizedBox(height: 10),
-                    BigButtonWidget(text: "Post Request | €5.5", page: HomeOwnerOrdersPage())
+                  BigButtonWidget(text: "Post Request | €5.5", page: HomeOwnerOrdersPage(), shadow: true,)
                 ],
               )),
         ));

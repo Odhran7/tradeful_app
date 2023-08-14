@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/small_text.dart';
 
-import '../../utils/colors.dart';
+import '../../../utils/colors.dart';
 
 class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String profileIcon;

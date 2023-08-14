@@ -67,7 +67,7 @@ class _TradeSelectionWidgetState extends State<TradeSelectionWidget> {
               color: isSelected
                   ? AppColors.complementaryGreen
                   : AppColors.buttonColor,
-              elevation: 5,
+              elevation: 0,
               child: Column(
                 children: [
                   SizedBox(

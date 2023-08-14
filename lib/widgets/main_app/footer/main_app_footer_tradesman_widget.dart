@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 
-import '../../utils/colors.dart';
+import '../../../utils/colors.dart';
 
 class MainAppFooterTradesmanWidget extends StatefulWidget {
   final bool needsBack;
