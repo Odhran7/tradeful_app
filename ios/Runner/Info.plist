@@ -47,6 +47,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Upload images for confirming/getting quotes</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Upload images to confirm/get quotes</string>
 </dict>
 </plist>

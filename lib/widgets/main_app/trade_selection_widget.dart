@@ -5,8 +5,13 @@ import 'package:tradeful_app/widgets/small_text.dart';
 import '../../models/trade_model.dart';
 import '../../utils/colors.dart';
 
-class TradeSelectionWidget extends StatelessWidget {
-  const TradeSelectionWidget({super.key});
+class TradeSelectionWidget extends StatefulWidget {
+  @override
+  _TradeSelectionWidgetState createState() => _TradeSelectionWidgetState();
+}
+
+class _TradeSelectionWidgetState extends State<TradeSelectionWidget> {
+  int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -47,22 +52,36 @@ class TradeSelectionWidget extends StatelessWidget {
       itemCount: trades.length,
       itemBuilder: (context, index) {
         final trade = trades[index];
+        final bool isSelected = selectedIndex == index;
         return Container(
           width: 75,
           height: 75,
           child: GestureDetector(
             onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
               print('${trade.title} is selected');
             },
             child: Card(
-              color: AppColors.buttonColor,
+              color: isSelected
+                  ? AppColors.complementaryGreen
+                  : AppColors.buttonColor,
               elevation: 5,
               child: Column(
                 children: [
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Icon(trade.icon, color: AppColors.textColor),
-                  SizedBox(height: 4,),
-                  SmallText(text: trade.title, size: 10, bold: true, color: AppColors.textColor),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  SmallText(
+                      text: trade.title,
+                      size: 10,
+                      bold: true,
+                      color: AppColors.textColor),
                 ],
               ),
             ),

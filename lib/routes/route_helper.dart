@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
+import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/request_job/homeowner_request_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/accept_job/accept_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/home/tradesmen_dashboard.dart';
@@ -41,6 +42,7 @@ class RouteHelper {
 
   static const String homeOwnerDashboard = '/dashboard-homeowner';
   static const String homeOwnerRequestJob = '/homeowner-request-job';
+  static const String homeOwnerOrders = '/homeowner-orders';
 
   // TradesPerson
 
@@ -72,6 +74,7 @@ class RouteHelper {
 
   static String getHomeOwnerDashboard() => '$homeOwnerDashboard';
   static String getHomeOwnerRequestJob() => '$homeOwnerRequestJob';
+  static String getHomeOwnerOrders() => '$homeOwnerOrders';
 
   // Tradesperson
 
@@ -140,6 +143,10 @@ class RouteHelper {
       name: homeOwnerRequestJob,
       page: () => HomeOwnerRequestJobPage(),
     ),
+    GetPage(
+      name: homeOwnerOrders,
+      page: () => HomeOwnerOrdersPage(),
+    ),
 
     // Tradesperson
 
@@ -151,6 +158,6 @@ class RouteHelper {
       name: acceptJobTradesman,
       page: () => TradesManAcceptJobPage(),
     ),
-
   ];
 }
+

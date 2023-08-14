@@ -4,10 +4,10 @@ import 'package:tradeful_app/widgets/big_text.dart';
 
 import '../utils/colors.dart';
 
-class BigButtonStatelessWidget extends StatelessWidget {
+class BigButtonStatefulWidget extends StatelessWidget {
   final String text;
   final StatefulWidget page; 
-  const BigButtonStatelessWidget({super.key, required this.text, required this.page});
+  const BigButtonStatefulWidget({super.key, required this.text, required this.page});
 
   @override
   Widget build(BuildContext context) {

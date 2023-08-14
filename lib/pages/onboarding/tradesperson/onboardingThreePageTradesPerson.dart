@@ -25,7 +25,7 @@ class OnboardingThreeTradesPersonPage extends StatelessWidget {
             SizedBox(height: Dimensions.height30),
             FormEntryWidget(text: "Phone Number", icon: Icons.phone),
             SizedBox(height: Dimensions.height30),
-            BigButtonStatelessWidget(text: "Next", page: OTPVerificationTradesPersonPage())
+            BigButtonStatefulWidget(text: "Next", page: OTPVerificationTradesPersonPage())
           ],
         ),
       ),
