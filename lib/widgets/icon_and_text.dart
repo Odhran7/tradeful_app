@@ -6,11 +6,13 @@ class IconAndTextWidget extends StatelessWidget {
   final IconData icon;
   final String text;
   final Color iconColor;
+  final double size;
   const IconAndTextWidget({
     super.key,
     required this.icon,
     required this.text,
     required this.iconColor,
+    this.size = 12
   });
 
   @override
@@ -23,7 +25,7 @@ class IconAndTextWidget extends StatelessWidget {
           size: 28,
         ),
         SizedBox(width: 5),
-        SmallText(text: text),
+        SmallText(text: text, size: size,),
         SizedBox(width: 5),
       ],
     );

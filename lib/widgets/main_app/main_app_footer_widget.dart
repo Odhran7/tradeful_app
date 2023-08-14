@@ -70,3 +70,10 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
     );
   }
 }
+
+
+// traction - someone using the app 
+// Sign up list - email 25 
+// A1 
+// shareholder 33 - 
+// leo grnats - feasibility 
