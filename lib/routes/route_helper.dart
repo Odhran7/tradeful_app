@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
+import 'package:tradeful_app/pages/app/homeowner/request_job/homeowner_request_job_page.dart';
+import 'package:tradeful_app/pages/app/tradesmen/accept_job/accept_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/home/tradesmen_dashboard.dart';
 import 'package:tradeful_app/pages/onboarding/homeowner/OTP_verification_homeowner.dart';
 import 'package:tradeful_app/pages/onboarding/homeowner/onboardingFinalHomeowner.dart';
@@ -26,15 +28,24 @@ class RouteHelper {
   static const String onboardingFinalHomeOwner = '/onboarding-final-homeonwer';
   static const String onboardingFinalTradesPerson =
       '/onboarding-final-homeowner';
-  static const String onbordingOTPVTradesMenVerification = '/onboarding-verify-tradesperson';
-  static const String onbordingOTPVHomeOwnerVerification = '/onboarding-verify-homeowner';
+  static const String onbordingOTPVTradesMenVerification =
+      '/onboarding-verify-tradesperson';
+  static const String onbordingOTPVHomeOwnerVerification =
+      '/onboarding-verify-homeowner';
   static const String onboardingReviewTradesMen = '/review-tradesmen';
   static const String onboardingReviewHomeOwner = '/review-homeowner';
 
   // App
 
+  // Homeowner
+
   static const String homeOwnerDashboard = '/dashboard-homeowner';
+  static const String homeOwnerRequestJob = '/homeowner-request-job';
+
+  // TradesPerson
+
   static const String tradesMenDashboard = '/dashbaord-tradesmen';
+  static const String acceptJobTradesman = '/accept-job-tradesman';
 
   // Initial Routes
 
@@ -48,15 +59,24 @@ class RouteHelper {
   static String getOnboardingFinalTradesPerson() =>
       '$onboardingFinalTradesPerson';
   static String getOnboardingFinalHomeOwner() => '$onboardingFinalHomeOwner';
-  static String getOnbordingOTPTradesMenVerification() => '$onbordingOTPVTradesMenVerification';
-  static String getOnbordingOTPHomeOwnerVerification() => '$onbordingOTPVHomeOwnerVerification';
+  static String getOnbordingOTPTradesMenVerification() =>
+      '$onbordingOTPVTradesMenVerification';
+  static String getOnbordingOTPHomeOwnerVerification() =>
+      '$onbordingOTPVHomeOwnerVerification';
   static String getOnboardingReviewHomeOwner() => '$onboardingReviewHomeOwner';
   static String getOnboardingReviewTradesMen() => '$onboardingReviewTradesMen';
 
   // App Routes
 
+  // Homeowner
+
   static String getHomeOwnerDashboard() => '$homeOwnerDashboard';
+  static String getHomeOwnerRequestJob() => '$homeOwnerRequestJob';
+
+  // Tradesperson
+
   static String getTradesMenDashboard() => '$tradesMenDashboard';
+  static String getAcceptJobTradesman() => '$acceptJobTradesman';
 
   static List<GetPage> routes = [
     GetPage(
@@ -95,7 +115,7 @@ class RouteHelper {
       name: onbordingOTPVTradesMenVerification,
       page: () => OTPVerificationTradesPersonPage(),
     ),
-      GetPage(
+    GetPage(
       name: onbordingOTPVHomeOwnerVerification,
       page: () => OTPVerificationHomeOwnerPage(),
     ),
@@ -109,13 +129,28 @@ class RouteHelper {
     ),
 
     // App Get routes
+
+    // Homeowner
+
     GetPage(
       name: homeOwnerDashboard,
       page: () => HomeOwnerDashboardPage(),
     ),
     GetPage(
+      name: homeOwnerRequestJob,
+      page: () => HomeOwnerRequestJobPage(),
+    ),
+
+    // Tradesperson
+
+    GetPage(
       name: tradesMenDashboard,
       page: () => TradesMenDashboardPage(),
     ),
+    GetPage(
+      name: acceptJobTradesman,
+      page: () => TradesManAcceptJobPage(),
+    ),
+
   ];
 }

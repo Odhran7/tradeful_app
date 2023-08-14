@@ -5,17 +5,17 @@ import 'package:tradeful_app/utils/dimensions.dart';
 
 import '../../utils/colors.dart';
 
-class MainAppFooterWidget extends StatefulWidget {
+class MainAppFooterTradesmanWidget extends StatefulWidget {
   final bool needsBack;
   final StatelessWidget page;
-  MainAppFooterWidget({Key? key, this.needsBack = false, required this.page})
+  MainAppFooterTradesmanWidget({Key? key, this.needsBack = false, required this.page})
       : super(key: key);
 
   @override
-  State<MainAppFooterWidget> createState() => _MainAppFooterWidgetState();
+  State<MainAppFooterTradesmanWidget> createState() => _MainAppFooterTradesmanWidgetState();
 }
 
-class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
+class _MainAppFooterTradesmanWidgetState extends State<MainAppFooterTradesmanWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -71,7 +71,7 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
             },
             child: widget.needsBack
                 ? Icon(Icons.arrow_back_ios, color: AppColors.buttonColor)
-                : Icon(Icons.add, color: AppColors.buttonColor),
+                : Icon(Icons.help_rounded, color: AppColors.buttonColor),
           ),
         ),
       ],
@@ -79,9 +79,3 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
   }
 }
 
-
-// traction - someone using the app 
-// Sign up list - email 25 
-// A1 
-// shareholder 33 - 
-// leo grnats - feasibility 

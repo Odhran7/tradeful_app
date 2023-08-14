@@ -161,6 +161,9 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
               ],
             ),
           ),
+          SizedBox(
+            height: Dimensions.height15,
+          ),
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -254,7 +257,6 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
               ],
             ),
             child: Container(
- 
               padding: EdgeInsets.only(
                   top: Dimensions.height15,
                   left: Dimensions.width15,
@@ -274,6 +276,24 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
         // Handle tap event
       },
       child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.textColor,
+          border: Border.all(color: AppColors.buttonColor, width: 2.0),
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 5,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        padding: EdgeInsets.only(
+            left: Dimensions.width15,
+            right: Dimensions.width15,
+            top: Dimensions.height15,
+            bottom: Dimensions.height15),
         margin: EdgeInsets.only(
             left: Dimensions.width15,
             right: Dimensions.width15,
@@ -307,9 +327,8 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          BigText(text: recommendedTradesPeople.name),
+                          BigText(text: recommendedTradesPeople.name, size: 25, bold: true),
                           SizedBox(height: Dimensions.height15),
-                          SmallText(text: recommendedTradesPeople.location),
                           SizedBox(height: Dimensions.height15),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -318,13 +337,13 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
                                 icon: Icons.handyman,
                                 text: recommendedTradesPeople.tradeType,
                                 iconColor: AppColors.buttonColor,
-                                size: 12,
+                                size: 10,
                               ),
                               IconAndTextWidget(
                                   icon: Icons.location_on,
                                   text: recommendedTradesPeople.location,
                                   iconColor: AppColors.buttonColor,
-                                  size: 12),
+                                  size: 10),
                               IconAndTextWidget(
                                 icon: Icons.verified,
                                 text: "",
