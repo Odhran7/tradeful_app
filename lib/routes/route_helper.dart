@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
+import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/view_quotes_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/request_job/homeowner_request_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/accept_job/accept_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/home/tradesmen_dashboard.dart';
@@ -12,6 +13,7 @@ import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingThreePageTr
 import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingTradesPersonTwoPage.dart';
 import 'package:tradeful_app/pages/onboarding/homeowner/reivew_onboarding_homeowner_page.dart';
 import 'package:tradeful_app/pages/onboarding/tradesperson/reivew_onboarding_tradesmen_page.dart';
+import '../pages/app/homeowner/homeowner_dashboard/homeowner_order_history_page.dart';
 import '../pages/home/main_home_page.dart';
 import '../pages/onboarding/homeowner/onboardingHomeownerTwoPage.dart';
 import '../pages/onboarding/homeowner/onboardingThreeHomeOwner.dart';
@@ -43,6 +45,8 @@ class RouteHelper {
   static const String homeOwnerDashboard = '/dashboard-homeowner';
   static const String homeOwnerRequestJob = '/homeowner-request-job';
   static const String homeOwnerOrders = '/homeowner-orders';
+  static const String homeOwnerOrderHistory = '/homeowner-order-history';
+  static const String homeOwnerQuotes = '/homeowner-view-quotes';
 
   // TradesPerson
 
@@ -75,6 +79,8 @@ class RouteHelper {
   static String getHomeOwnerDashboard() => '$homeOwnerDashboard';
   static String getHomeOwnerRequestJob() => '$homeOwnerRequestJob';
   static String getHomeOwnerOrders() => '$homeOwnerOrders';
+  static String getHomeOwnerOrderHistory() => '$homeOwnerOrderHistory';
+  static String getHomeOwnerQuotes() => '$homeOwnerQuotes';
 
   // Tradesperson
 
@@ -147,6 +153,12 @@ class RouteHelper {
       name: homeOwnerOrders,
       page: () => HomeOwnerOrdersPage(),
     ),
+    GetPage(
+        name: homeOwnerOrderHistory, page: () => HomeOwnerOrderHistoryPage()),
+    GetPage(
+      name: homeOwnerQuotes,
+      page: () => HomeOwnerViewQuotesPage(),
+    ),
 
     // Tradesperson
 
@@ -160,4 +172,3 @@ class RouteHelper {
     ),
   ];
 }
-

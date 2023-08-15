@@ -7,26 +7,35 @@ import '../utils/colors.dart';
 
 class SmallButtonWidget extends StatelessWidget {
   final String text;
-  const SmallButtonWidget({super.key, required this.text});
+  StatelessWidget? page;
+  final Color buttonColor;
+  final Color textColor;
+  SmallButtonWidget(
+      {super.key,
+      required this.text,
+      this.page,
+      this.buttonColor = const Color(0xff8be381),
+      this.textColor = const Color(0xfffefffb),
+      });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // TODO
+        Get.to(page);
       },
       child: Container(
         width: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: AppColors.mainGray,
+          color: buttonColor,
         ),
         child: Center(
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: BigText(
               text: text,
-              color: AppColors.textColor,
+              color: textColor,
               size: 10,
             ),
           ),

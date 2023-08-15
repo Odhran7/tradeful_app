@@ -28,4 +28,10 @@ class AppColors {
   static final Color verifiedGreen = const Color(0xff00FF7F);
   static final Color buttonColor = const Color(0xff8be381);
   static final Color complementaryGreen = const Color(0XFF57ca4a);
+
+  // Urgency Colors
+
+  static final Color urgentRed = const Color(0xffdf1e26);
+  static final Color urgentOrange = const Color(0xfff37220);
+  static final Color urgentYellow = const Color(0xfffba31a);
 }
