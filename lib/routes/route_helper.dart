@@ -13,11 +13,19 @@ import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingThreePageTr
 import 'package:tradeful_app/pages/onboarding/tradesperson/onboardingTradesPersonTwoPage.dart';
 import 'package:tradeful_app/pages/onboarding/homeowner/reivew_onboarding_homeowner_page.dart';
 import 'package:tradeful_app/pages/onboarding/tradesperson/reivew_onboarding_tradesmen_page.dart';
+import '../models/user_model.dart';
 import '../pages/app/homeowner/homeowner_dashboard/homeowner_order_history_page.dart';
+import '../pages/app/homeowner/messaging/homeowner_messaging.dart';
+import '../pages/app/homeowner/messaging/homeowner_messaging_room_page.dart';
 import '../pages/home/main_home_page.dart';
 import '../pages/onboarding/homeowner/onboardingHomeownerTwoPage.dart';
 import '../pages/onboarding/homeowner/onboardingThreeHomeOwner.dart';
 import '../pages/onboarding/tradesperson/OTP_verification_tradesperson.dart';
+
+// Current user
+
+final User currentUser =
+    User(id: 0, name: 'You', avatar: 'assets/images/profile_icon.jpeg');
 
 class RouteHelper {
   static const String initial = '/';
@@ -47,6 +55,8 @@ class RouteHelper {
   static const String homeOwnerOrders = '/homeowner-orders';
   static const String homeOwnerOrderHistory = '/homeowner-order-history';
   static const String homeOwnerQuotes = '/homeowner-view-quotes';
+  static const String homeOwnerMessaging = '/homeowner-messaging';
+  static const String homeOwnerMessagingRoom = '/homeowner-messaging-room';
 
   // TradesPerson
 
@@ -81,6 +91,8 @@ class RouteHelper {
   static String getHomeOwnerOrders() => '$homeOwnerOrders';
   static String getHomeOwnerOrderHistory() => '$homeOwnerOrderHistory';
   static String getHomeOwnerQuotes() => '$homeOwnerQuotes';
+  static String getHomeOwnerMessaging() => '$homeOwnerMessaging';
+  static String getHomeOwnerMessagingRoom() => '$homeOwnerMessagingRoom';
 
   // Tradesperson
 
@@ -158,6 +170,14 @@ class RouteHelper {
     GetPage(
       name: homeOwnerQuotes,
       page: () => HomeOwnerViewQuotesPage(),
+    ),
+    GetPage(
+      name: homeOwnerMessaging,
+      page: () => HomeOwnerMessagingPage(),
+    ),
+    GetPage(
+      name: homeOwnerMessagingRoom,
+      page: () => ChatRoom(user: currentUser),
     ),
 
     // Tradesperson

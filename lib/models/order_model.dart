@@ -55,7 +55,7 @@ class OrderItem {
     }
   }
 
-  // Getter methods defined below to retrieve the name, profile image and numComments;
+  // Getter methods defined below to retrieve the name, profile image and numComments, rating & location;
 
   String get tradesPersonName {
     if (tradesPerson != null) {
@@ -76,6 +76,22 @@ class OrderItem {
   String get tradesPersonNumComments {
     if (tradesPerson != null) {
       return tradesPerson!.numComments;
+    } else {
+      return "No tradesperson attached to job";
+    }
+  }
+
+  String get tradesPersonRating {
+    if (tradesPerson != null) {
+      return tradesPerson!.rating;
+    } else {
+      return "No tradesperson attached to job";
+    }
+  }
+
+  String get tradesPersonLocation {
+    if (tradesPerson != null) {
+      return tradesPerson!.location;
     } else {
       return "No tradesperson attached to job";
     }

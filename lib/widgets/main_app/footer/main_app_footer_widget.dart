@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
+import 'package:tradeful_app/pages/app/homeowner/messaging/homeowner_messaging.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 
+import '../../../models/user_model.dart';
+import '../../../pages/app/homeowner/messaging/homeowner_messaging_room_page.dart';
 import '../../../utils/colors.dart';
 
 class MainAppFooterWidget extends StatefulWidget {
@@ -20,6 +23,10 @@ class MainAppFooterWidget extends StatefulWidget {
 class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
   @override
   Widget build(BuildContext context) {
+    // Current user
+
+    final User currentUser =
+        User(id: 0, name: 'You', avatar: 'assets/images/profile_icon.jpeg');
     return Stack(
       clipBehavior: Clip.none, // Allow overflow
       children: [
@@ -70,7 +77,7 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // TODO
+                          Get.to(() => HomeOwnerMessagingPage());
                         },
                         child: Icon(Icons.message_outlined,
                             color: AppColors.buttonColor, size: 42),

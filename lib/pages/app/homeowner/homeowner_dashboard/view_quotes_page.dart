@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
+import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
+import 'package:tradeful_app/widgets/big_text.dart';
 import 'package:tradeful_app/widgets/main_app/appbar/main_app_bar_widget.dart';
 import 'package:tradeful_app/widgets/main_app/footer/main_app_footer_widget.dart';
-
 import '../../../../models/order_model.dart';
 import '../../../../models/tradespeople.dart';
+import '../../../../utils/colors.dart';
+import '../../../../widgets/main_app/tradesperson_quote_widget.dart';
 
 class HomeOwnerViewQuotesPage extends StatelessWidget {
   const HomeOwnerViewQuotesPage({super.key});
@@ -15,8 +17,8 @@ class HomeOwnerViewQuotesPage extends StatelessWidget {
     final List<OrderItem> orders = [
       OrderItem(
         date: '15th Aug 2023',
-        tradeRequested: 'Plumber',
-        icon: Icons.plumbing,
+        tradeRequested: 'Electrician',
+        icon: Icons.electrical_services,
         priceRequested: '\$760',
         starsRequested: 4,
         urgency: 3,
@@ -41,23 +43,48 @@ class HomeOwnerViewQuotesPage extends StatelessWidget {
             '4.7',
             'Dublin',
             '56',
-            'Plumber'),
+            'Electrician'),
       ),
     ];
     return Scaffold(
       appBar: MainAppBarWidget(profileIcon: 'assets/images/profile_icon.jpeg'),
       body: Container(
-        margin: EdgeInsets.only(
-            left: Dimensions.width30,
-            right: Dimensions.width30,
-            top: Dimensions.height30,
-            bottom: Dimensions.height30),
+        margin: EdgeInsets.symmetric(
+          horizontal: Dimensions.width30,
+          vertical: Dimensions.height30,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          gradient: LinearGradient(
+            colors: [Colors.blueGrey[50]!, Colors.white],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
         child: Column(
-          children: [],
+          children: [
+            BigText(
+                text: "View Your Quotes",
+                size: 30,
+                bold: true,
+                color: AppColors.mainColor),
+            SizedBox(height: Dimensions.height30), 
+            Expanded(
+              child: ListView.separated(
+                itemCount: orders.length,
+                itemBuilder: (context, index) {
+                  return TradespersonCard(order: orders[index]);
+                },
+                separatorBuilder: (context, index) => Divider(
+                    color:
+                        AppColors.textColor.withOpacity(0.2)), 
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar:
-          MainAppFooterWidget(needsBack: true, page: HomeOwnerDashboardPage()),
+          MainAppFooterWidget(needsBack: true, page: HomeOwnerOrdersPage()),
     );
   }
 }
