@@ -1,10 +1,14 @@
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/messaging/homeowner_messaging_room_page.dart';
+import 'package:tradeful_app/utils/colors.dart';
+import 'package:tradeful_app/widgets/small_text.dart';
 
 import '../../../models/message_model.dart';
 import '../../../models/user_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../../utils/Dimensions.dart';
 
 class AllChats extends StatelessWidget {
   @override
@@ -41,197 +45,217 @@ class AllChats extends StatelessWidget {
     final User virgil =
         User(id: 9, name: 'Virgil', avatar: 'assets/images/Virgil.jpg');
 
-    final List<Message> recentChats = [
-      Message(
-        sender: addison,
-        avatar: 'assets/images/Addison.jpg',
-        time: '01:25',
-        text: "typing...",
-        unreadCount: 1,
-      ),
-      Message(
-        sender: jason,
-        avatar: 'assets/images/Jason.jpg',
-        time: '12:46',
-        text: "Will I be in it?",
-        unreadCount: 1,
-      ),
-      Message(
-        sender: deanna,
-        avatar: 'assets/images/Deanna.jpg',
-        time: '05:26',
-        text: "That's so cute.",
-        unreadCount: 3,
-      ),
-      Message(
-          sender: nathan,
-          avatar: 'assets/images/Nathan.jpg',
-          time: '12:45',
-          text: "Let me see what I can do.",
-          unreadCount: 2),
-    ];
+final List<Message> recentChats = [
+  Message(
+    sender: addison,
+    avatar: 'assets/images/Addison.jpg',
+    time: '01:25',
+    text: "typing...",
+    unreadCount: 1,
+  ),
+  Message(
+    sender: jason,
+    avatar: 'assets/images/Jason.jpg',
+    time: '12:46',
+    text: "Can we schedule a visit for tomorrow?",
+    unreadCount: 1,
+  ),
+  Message(
+    sender: deanna,
+    avatar: 'assets/images/Deanna.jpg',
+    time: '05:26',
+    text: "Received your request. How can I assist?",
+    unreadCount: 3,
+  ),
+  Message(
+    sender: nathan,
+    avatar: 'assets/images/Nathan.jpg',
+    time: '12:45',
+    text: "I've sent you a quote. Please check.",
+    unreadCount: 2,
+  ),
+];
 
-    final List<Message> allChats = [
-      Message(
-        sender: virgil,
-        avatar: 'assets/images/Virgil.jpg',
-        time: '12:59',
-        text: "No! I just wanted",
-        unreadCount: 0,
-        isRead: true,
-      ),
-      Message(
-        sender: stanley,
-        avatar: 'assets/images/Stanley.jpg',
-        time: '10:41',
-        text: "You did what?",
-        unreadCount: 1,
-        isRead: false,
-      ),
-      Message(
-        sender: leslie,
-        avatar: 'assets/images/Leslie.jpg',
-        time: '05:51',
-        unreadCount: 0,
-        isRead: true,
-        text: "just signed up for a tutor",
-      ),
-      Message(
-        sender: judd,
-        avatar: 'assets/images/Judd.jpg',
-        time: '10:16',
-        text: "May I ask you something?",
-        unreadCount: 2,
-        isRead: false,
-      ),
-    ];
+final List<Message> allChats = [
+  Message(
+    sender: virgil,
+    avatar: 'assets/images/Virgil.jpg',
+    time: '12:59',
+    text: "Thanks for the feedback! Will...",
+    unreadCount: 0,
+    isRead: true,
+  ),
+  Message(
+    sender: stanley,
+    avatar: 'assets/images/Stanley.jpg',
+    time: '10:41',
+    text: "Do you have any specific...",
+    unreadCount: 1,
+    isRead: false,
+  ),
+  Message(
+    sender: leslie,
+    avatar: 'assets/images/Leslie.jpg',
+    time: '05:51',
+    unreadCount: 0,
+    isRead: true,
+    text: "I'm available on Tuesday...",
+  ),
+  Message(
+    sender: judd,
+    avatar: 'assets/images/Judd.jpg',
+    time: '10:16',
+    text: "Please confirm the materials...",
+    unreadCount: 2,
+    isRead: false,
+  ),
+];
 
-    final List<Message> messages = [
-      Message(
-        sender: addison,
-        time: '12:09 AM',
-        avatar: addison.avatar,
-        text: "...",
+final List<Message> messages = [
+  Message(
+    sender: addison,
+    time: '12:09 AM',
+    avatar: addison.avatar,
+    text: "I've completed the task. Let me know if there's anything else.",
+  ),
+  Message(
+    sender: currentUser,
+    time: '12:05 AM',
+    avatar: 'assets/images/profile_picture.jpeg',
+    isRead: true,
+    text: "Thank you for the quick response!",
+  ),
+  Message(
+    sender: currentUser,
+    avatar: 'assets/images/profile_picture.jpeg',
+    time: '12:05 AM',
+    isRead: true,
+    text: "How much will the additional work cost?",
+  ),
+  Message(
+    sender: addison,
+    time: '11:58 PM',
+    avatar: addison.avatar,
+    text: "I noticed a few more issues while working. Would you like me to fix them?",
+  ),
+  Message(
+    sender: addison,
+    time: '11:58 PM',
+    avatar: addison.avatar,
+    text: "I'll be there first thing in the morning.",
+  ),
+  Message(
+    sender: currentUser,
+    avatar: 'assets/images/profile_picture.jpeg',
+    time: '11:45 PM',
+    isRead: true,
+    text: "Please ensure the work is done by the weekend.",
+  ),
+  Message(
+    sender: addison,
+    time: '11:30 PM',
+    avatar: addison.avatar,
+    text: "Got your request. I'll start on it right away.",
+  ),
+];
+
+    return Container(
+      padding: EdgeInsets.only(
+        top: Dimensions.height15,
+        bottom: Dimensions.height15,
+        left: Dimensions.width15,
+        right: Dimensions.width15,
       ),
-      Message(
-        sender: currentUser,
-        time: '12:05 AM',
-        avatar: 'assets/images/profile_picture.jpeg',
-        isRead: true,
-        text: "I’m going home.",
+      margin: EdgeInsets.only(
+          left: Dimensions.width30,
+          right: Dimensions.width30,
+          top: Dimensions.height30,
+          bottom: Dimensions.height30),
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.buttonColor, width: 2.0),
+        borderRadius: BorderRadius.circular(30),
       ),
-      Message(
-        sender: currentUser,
-        avatar: 'assets/images/profile_picture.jpeg',
-        time: '12:05 AM',
-        isRead: true,
-        text: "See, I was right, this doesn’t interest me.",
-      ),
-      Message(
-        sender: addison,
-        time: '11:58 PM',
-        avatar: addison.avatar,
-        text: "I sign your paychecks.",
-      ),
-      Message(
-        sender: addison,
-        time: '11:58 PM',
-        avatar: addison.avatar,
-        text: "You think we have nothing to talk about?",
-      ),
-      Message(
-        sender: currentUser,
-        avatar: 'assets/images/profile_picture.jpeg',
-        time: '11:45 PM',
-        isRead: true,
-        text:
-            "Well, because I had no intention of being in your office. 20 minutes ago",
-      ),
-      Message(
-        sender: addison,
-        time: '11:30 PM',
-        avatar: addison.avatar,
-        text: "I was expecting you in my office 20 minutes ago.",
-      ),
-    ];
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.only(top: 10),
-          child: Row(
-            children: [
-              Text(
-                'All Chats',
-              ),
-            ],
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 10),
+            child: Row(
+              children: [
+                SmallText(
+                  text: 'All Chats',
+                  size: 16,
+                  bold: true,
+                ),
+              ],
+            ),
           ),
-        ),
-        ListView.builder(
-            shrinkWrap: true,
-            physics: ScrollPhysics(),
-            itemCount: allChats.length,
-            itemBuilder: (context, int index) {
-              final allChat = allChats[index];
-              return Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 28,
-                        backgroundImage: AssetImage(allChat.avatar),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => ChatRoom(user: currentUser));
-                        },
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ListView.builder(
+              shrinkWrap: true,
+              physics: ScrollPhysics(),
+              itemCount: allChats.length,
+              itemBuilder: (context, int index) {
+                final allChat = allChats[index];
+                return Container(
+                    margin: const EdgeInsets.only(top: 20),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 28,
+                          backgroundImage: AssetImage(allChat.avatar),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(() => ChatRoom(user: currentUser));
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SmallText(
+                                text: allChat.sender.name,
+                                size: 15,
+                              ),
+                              SmallText(
+                                text: allChat.text,
+                                size: 15,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(
-                              allChat.sender.name,
+                            allChat.unreadCount == 0
+                                ? Icon(Icons.done_all,
+                                    color: AppColors.buttonColor)
+                                : CircleAvatar(
+                                    radius: 8,
+                                    backgroundColor: Colors.white,
+                                    child: Text(
+                                      allChat.unreadCount.toString(),
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                            SizedBox(
+                              height: 10,
                             ),
-                            Text(
-                              allChat.text,
-                            ),
+                            SmallText(
+                              text: allChat.time,
+                            )
                           ],
                         ),
-                      ),
-                      Spacer(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          allChat.unreadCount == 0
-                              ? Icon(
-                                  Icons.done_all,
-                                  // Add Color here
-                                )
-                              : CircleAvatar(
-                                  radius: 8,
-                                  // Background color
-                                  child: Text(
-                                    allChat.unreadCount.toString(),
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            allChat.time,
-                          )
-                        ],
-                      ),
-                    ],
-                  ));
-            })
-      ],
+                      ],
+                    ));
+              })
+        ],
+      ),
     );
   }
 }

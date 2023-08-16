@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
 
 import '../../models/order_model.dart';
+import '../../pages/app/homeowner/homeowner_dashboard/view_profile_homeowner.dart';
 import '../../utils/colors.dart';
 import '../small_text.dart';
 
@@ -83,9 +85,7 @@ class _TradespersonCardState extends State<TradespersonCard> {
                         SizedBox(width: 10),
                         TextButton(
                           onPressed: () {
-                            setState(() {
-                              isExpanded = !isExpanded;
-                            });
+                            Get.to(() => ViewProfileHomeOwnerPage());
                           },
                           child: Text("View Profile"),
                           style: TextButton.styleFrom(
@@ -103,7 +103,10 @@ class _TradespersonCardState extends State<TradespersonCard> {
           if (isExpanded)
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: SmallText(text: 'I am wondering if I could do this today for \€45?', color: AppColors.textColor,),
+              child: SmallText(
+                text: 'I am wondering if I could do this today for \€45?',
+                color: AppColors.textColor,
+              ),
             ),
         ],
       ),

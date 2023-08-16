@@ -18,6 +18,7 @@ class AppColors {
   static final Color flatWhite = const Color(0xfffbf9f2);
   static final Color complementaryWhite1 = const Color(0xfffffbfc);
   static final Color complementaryWhite2 = const Color(0xfffefbff);
+  static final Color offsetWhite = const Color(0xfff5f5f5);
 
   // Icon colors
 

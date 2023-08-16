@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tradeful_app/utils/colors.dart';
+import 'package:tradeful_app/widgets/small_text.dart';
 
 import '../../../models/message_model.dart';
 import '../../../models/user_model.dart';
 
 class Conversation extends StatelessWidget {
-
   final User user;
   const Conversation({Key? key, required this.user}) : super(key: key);
 
@@ -54,22 +55,23 @@ class Conversation extends StatelessWidget {
         sender: jason,
         avatar: 'assets/images/Jason.jpg',
         time: '12:46',
-        text: "Will I be in it?",
+        text: "Can we schedule a visit for tomorrow?",
         unreadCount: 1,
       ),
       Message(
         sender: deanna,
         avatar: 'assets/images/Deanna.jpg',
         time: '05:26',
-        text: "That's so cute.",
+        text: "Received your request. How can I assist?",
         unreadCount: 3,
       ),
       Message(
-          sender: nathan,
-          avatar: 'assets/images/Nathan.jpg',
-          time: '12:45',
-          text: "Let me see what I can do.",
-          unreadCount: 2),
+        sender: nathan,
+        avatar: 'assets/images/Nathan.jpg',
+        time: '12:45',
+        text: "I've sent you a quote. Please check.",
+        unreadCount: 2,
+      ),
     ];
 
     final List<Message> allChats = [
@@ -77,7 +79,7 @@ class Conversation extends StatelessWidget {
         sender: virgil,
         avatar: 'assets/images/Virgil.jpg',
         time: '12:59',
-        text: "No! I just wanted",
+        text: "Thanks for the feedback! Will improve next time.",
         unreadCount: 0,
         isRead: true,
       ),
@@ -85,7 +87,7 @@ class Conversation extends StatelessWidget {
         sender: stanley,
         avatar: 'assets/images/Stanley.jpg',
         time: '10:41',
-        text: "You did what?",
+        text: "Do you have any specific requirements?",
         unreadCount: 1,
         isRead: false,
       ),
@@ -93,15 +95,15 @@ class Conversation extends StatelessWidget {
         sender: leslie,
         avatar: 'assets/images/Leslie.jpg',
         time: '05:51',
+        text: "I'm available on Tuesday. Does that work?",
         unreadCount: 0,
         isRead: true,
-        text: "just signed up for a tutor",
       ),
       Message(
         sender: judd,
         avatar: 'assets/images/Judd.jpg',
         time: '10:16',
-        text: "May I ask you something?",
+        text: "Please confirm the materials you'd like me to use.",
         unreadCount: 2,
         isRead: false,
       ),
@@ -112,49 +114,49 @@ class Conversation extends StatelessWidget {
         sender: addison,
         time: '12:09 AM',
         avatar: addison.avatar,
-        text: "...",
+        text: "I've completed the task. Let me know if there's anything else.",
       ),
       Message(
         sender: currentUser,
         time: '12:05 AM',
         avatar: 'assets/images/profile_picture.jpeg',
         isRead: true,
-        text: "I’m going home.",
+        text: "Thank you for the quick response!",
       ),
       Message(
         sender: currentUser,
         avatar: 'assets/images/profile_picture.jpeg',
         time: '12:05 AM',
         isRead: true,
-        text: "See, I was right, this doesn’t interest me.",
+        text: "How much will the additional work cost?",
       ),
       Message(
         sender: addison,
         time: '11:58 PM',
         avatar: addison.avatar,
-        text: "I sign your paychecks.",
+        text: "I noticed a few more issues while working.",
       ),
       Message(
         sender: addison,
         time: '11:58 PM',
         avatar: addison.avatar,
-        text: "You think we have nothing to talk about?",
+        text: "I'll be there first thing in the morning.",
       ),
       Message(
         sender: currentUser,
         avatar: 'assets/images/profile_picture.jpeg',
         time: '11:45 PM',
         isRead: true,
-        text:
-            "Well, because I had no intention of being in your office. 20 minutes ago",
+        text: "Please ensure the work is done by the weekend.",
       ),
       Message(
         sender: addison,
         time: '11:30 PM',
         avatar: addison.avatar,
-        text: "I was expecting you in my office 20 minutes ago.",
+        text: "Got your request. I'll start on it right away.",
       ),
     ];
+
     return ListView.builder(
         reverse: true,
         itemCount: messages.length,
@@ -183,15 +185,19 @@ class Conversation extends StatelessWidget {
                       constraints: BoxConstraints(
                           maxWidth: MediaQuery.of(context).size.width * 0.6),
                       decoration: BoxDecoration(
-                          color: isMe ? Colors.lightBlue : Colors.grey[200],
+                          color: isMe
+                              ? AppColors.mainColor
+                              : AppColors.buttonColor,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(16),
                             topRight: Radius.circular(16),
                             bottomLeft: Radius.circular(isMe ? 12 : 0),
                             bottomRight: Radius.circular(isMe ? 0 : 12),
                           )),
-                      child: Text(
-                        messages[index].text,
+                      child: SmallText(
+                        text: messages[index].text,
+                        size: 15,
+                        color: AppColors.textColor,
                       ),
                     ),
                   ],
@@ -209,13 +215,13 @@ class Conversation extends StatelessWidget {
                       Icon(
                         Icons.done_all,
                         size: 20,
-                        // Color
+                        color: AppColors.buttonColor,
                       ),
                       SizedBox(
                         width: 8,
                       ),
-                      Text(
-                        message.time,
+                      SmallText(
+                        text: message.time,
                       )
                     ],
                   ),

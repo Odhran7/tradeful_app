@@ -1,3 +1,6 @@
+import 'package:tradeful_app/utils/colors.dart';
+import 'package:tradeful_app/widgets/small_text.dart';
+
 import '../../../../models/user_model.dart';
 import 'package:flutter/material.dart';
 
@@ -34,12 +37,14 @@ class _ChatRoomState extends State<ChatRoom> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  widget.user.name,
+                SmallText(
+                  text: widget.user.name,
+                  size: 18,
+                  bold: true,
                 ),
-                Text(
-                  'online',
-
+                SmallText(
+                  text: 'online',
+                  size: 18,
                 ),
               ],
             ),
@@ -50,12 +55,14 @@ class _ChatRoomState extends State<ChatRoom> {
               icon: Icon(
                 Icons.videocam_outlined,
                 size: 28,
+                color: AppColors.buttonColor,
               ),
               onPressed: () {}),
           IconButton(
               icon: Icon(
                 Icons.call,
                 size: 28,
+                color: AppColors.buttonColor,
               ),
               onPressed: () {})
         ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tradeful_app/pages/app/homeowner/profile/profile_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 import 'package:tradeful_app/widgets/small_text.dart';
 
@@ -25,8 +27,8 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 1,
-              blurRadius: 5, 
-              offset: Offset(0, 3), 
+              blurRadius: 5,
+              offset: Offset(0, 3),
             ),
           ],
           color: AppColors.buttonColor,
@@ -40,18 +42,23 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColors.textColor,
-                    width: 2,
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => ProfilePage());
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: AppColors.textColor,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child:
-                      Image.asset(profileIcon, fit: BoxFit.contain, height: 62),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Image.asset(profileIcon,
+                        fit: BoxFit.contain, height: 62),
+                  ),
                 ),
               ),
               SizedBox(width: 8),

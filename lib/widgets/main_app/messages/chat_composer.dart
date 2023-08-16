@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tradeful_app/utils/colors.dart';
 
 Container buildChatComposer() {
   return Container(
@@ -19,7 +20,7 @@ Container buildChatComposer() {
               children: [
                 Icon(
                   Icons.emoji_emotions_outlined,
-                  color: Colors.grey[500],
+                  color: AppColors.buttonColor,
                 ),
                 SizedBox(
                   width: 10,
@@ -29,13 +30,13 @@ Container buildChatComposer() {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Type your message ...',
-                      hintStyle: TextStyle(color: Colors.grey[500]),
+                      hintStyle: TextStyle(color: Colors.grey[500], fontFamily: 'Salma Pro'),
                     ),
                   ),
                 ),
                 Icon(
                   Icons.attach_file,
-                  color: Colors.grey[500],
+                  color: AppColors.buttonColor,
                 )
               ],
             ),
@@ -45,10 +46,10 @@ Container buildChatComposer() {
           width: 16,
         ),
         CircleAvatar(
-          // background color
+          backgroundColor: Colors.white,
           child: Icon(
             Icons.mic,
-            color: Colors.white,
+            color: AppColors.buttonColor
           ),
         )
       ],

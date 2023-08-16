@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/view_quotes_page.dart';
+import 'package:tradeful_app/pages/app/homeowner/profile/profile_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/request_job/homeowner_request_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/accept_job/accept_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/home/tradesmen_dashboard.dart';
@@ -15,8 +16,10 @@ import 'package:tradeful_app/pages/onboarding/homeowner/reivew_onboarding_homeow
 import 'package:tradeful_app/pages/onboarding/tradesperson/reivew_onboarding_tradesmen_page.dart';
 import '../models/user_model.dart';
 import '../pages/app/homeowner/homeowner_dashboard/homeowner_order_history_page.dart';
+import '../pages/app/homeowner/homeowner_dashboard/view_profile_homeowner.dart';
 import '../pages/app/homeowner/messaging/homeowner_messaging.dart';
 import '../pages/app/homeowner/messaging/homeowner_messaging_room_page.dart';
+import '../pages/app/homeowner/profile/edit_profile_image.dart';
 import '../pages/home/main_home_page.dart';
 import '../pages/onboarding/homeowner/onboardingHomeownerTwoPage.dart';
 import '../pages/onboarding/homeowner/onboardingThreeHomeOwner.dart';
@@ -57,6 +60,9 @@ class RouteHelper {
   static const String homeOwnerQuotes = '/homeowner-view-quotes';
   static const String homeOwnerMessaging = '/homeowner-messaging';
   static const String homeOwnerMessagingRoom = '/homeowner-messaging-room';
+  static const String homeOwnerViewProfile = '/homeowner-view-profile';
+  static const String homeOwnerEditProfile = '/homeowner-view-profile';
+  static const String homeOwnerMyProfile = '/homeowner-my-profile';
 
   // TradesPerson
 
@@ -93,6 +99,9 @@ class RouteHelper {
   static String getHomeOwnerQuotes() => '$homeOwnerQuotes';
   static String getHomeOwnerMessaging() => '$homeOwnerMessaging';
   static String getHomeOwnerMessagingRoom() => '$homeOwnerMessagingRoom';
+  static String getHomeOwnerViewProfile() => '$homeOwnerViewProfile';
+  static String getHomeOwnerMyProfile() => '$homeOwnerMyProfile';
+  static String getHomeOwnerEditProfile() => '$homeOwnerEditProfile';
 
   // Tradesperson
 
@@ -178,6 +187,18 @@ class RouteHelper {
     GetPage(
       name: homeOwnerMessagingRoom,
       page: () => ChatRoom(user: currentUser),
+    ),
+    GetPage(
+      name: homeOwnerViewProfile,
+      page: () => ViewProfileHomeOwnerPage(),
+    ),
+    GetPage(
+      name: homeOwnerMyProfile,
+      page: () => ProfilePage(),
+    ),
+    GetPage(
+      name: homeOwnerEditProfile,
+      page: () => EditProfilePage(),
     ),
 
     // Tradesperson
