@@ -91,7 +91,7 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               Icon(
-                Icons.settings,
+                Icons.handyman,
                 color: AppColors.textColor,
                 size: 35,
               ),
