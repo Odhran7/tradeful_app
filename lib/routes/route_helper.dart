@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/view_quotes_page.dart';
+import 'package:tradeful_app/pages/app/homeowner/notifications/homeowner_notification_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/profile/profile_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/request_job/homeowner_request_job_page.dart';
 import 'package:tradeful_app/pages/app/tradesmen/accept_job/accept_job_page.dart';
@@ -63,6 +64,7 @@ class RouteHelper {
   static const String homeOwnerViewProfile = '/homeowner-view-profile';
   static const String homeOwnerEditProfile = '/homeowner-view-profile';
   static const String homeOwnerMyProfile = '/homeowner-my-profile';
+  static const String homeOwnerNotifications = '/homeowner-notifications';
 
   // TradesPerson
 
@@ -102,6 +104,7 @@ class RouteHelper {
   static String getHomeOwnerViewProfile() => '$homeOwnerViewProfile';
   static String getHomeOwnerMyProfile() => '$homeOwnerMyProfile';
   static String getHomeOwnerEditProfile() => '$homeOwnerEditProfile';
+  static String getHomeOwnerNotifications() => '$homeOwnerNotifications';
 
   // Tradesperson
 
@@ -200,7 +203,10 @@ class RouteHelper {
       name: homeOwnerEditProfile,
       page: () => EditProfilePage(),
     ),
-
+    GetPage(
+      name: homeOwnerNotifications,
+      page: () => NotificationsScreen(),
+    ),
     // Tradesperson
 
     GetPage(

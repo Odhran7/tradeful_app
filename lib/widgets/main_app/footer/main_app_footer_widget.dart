@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tradeful_app/pages/app/homeowner/home/homeowner_dashboard.dart';
 import 'package:tradeful_app/pages/app/homeowner/homeowner_dashboard/homeowner_orders_page.dart';
 import 'package:tradeful_app/pages/app/homeowner/messaging/homeowner_messaging.dart';
+import 'package:tradeful_app/pages/app/homeowner/notifications/homeowner_notification_page.dart';
 import 'package:tradeful_app/utils/dimensions.dart';
 
 import '../../../models/user_model.dart';
@@ -70,7 +71,7 @@ class _MainAppFooterWidgetState extends State<MainAppFooterWidget> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // TODO
+                          Get.to(() => NotificationsScreen());
                         },
                         child: Icon(Icons.notifications,
                             color: AppColors.buttonColor, size: 42),

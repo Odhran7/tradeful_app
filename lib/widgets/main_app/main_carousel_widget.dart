@@ -25,43 +25,22 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
   // Mock Backend
 
   // This is for the homeowner to see the specific trades
-
   List<Tradetype> tradeTypes = [
     Tradetype(
-      'Electrician',
-      'assets/images/electrician_icon.svg',
-      '105',
-      '200',
-      ['Install fixtures', 'Broken Freezer', 'Install heater'],
-    ),
-    Tradetype(
-      'Plumber',
-      'assets/images/plumber_icon.svg',
-      '56',
-      '153',
-      ['Leak', 'Clogged Drain', 'Fixtures'],
-    ),
-    Tradetype(
-      'Carpenter',
-      'assets/images/carpenter_icon.svg',
-      '48',
-      '100',
-      ['Custom', 'Repairs', 'Fittings'],
-    ),
-    Tradetype(
-      'Welder',
-      'assets/images/welder_icon.svg',
-      '12',
-      '255',
-      ['Gates', 'Farm yards', 'Commercial'],
-    ),
-    Tradetype(
-      'Photographer',
-      'assets/images/photographer_icon.svg',
-      '23',
-      '244',
-      ['Wedding', 'Portrait', 'Commercial'],
-    ),
+        'Electrician',
+        'assets/images/electrician_icon.svg',
+        '105',
+        '200',
+        ['Install fixtures', 'Broken Freezer', 'Install heater'],
+        Icons.electrical_services),
+    Tradetype('Plumber', 'assets/images/plumber_icon.svg', '56', '153',
+        ['Leak', 'Clogged Drain', 'Install Fixtures'], Icons.plumbing),
+    Tradetype('Carpenter', 'assets/images/carpenter_icon.svg', '48', '100',
+        ['Custom build', 'Repairs', 'Internal Fittings'], Icons.construction),
+    Tradetype('Welder', 'assets/images/welder_icon.svg', '12', '255',
+        ['Gates', 'Farm yards', 'Commercial'], Icons.build),
+    Tradetype('Photographer', 'assets/images/photographer_icon.svg', '23',
+        '244', ['Wedding', 'Portrait', 'Commercial'], Icons.camera_alt),
   ];
 
   // This is to showcase the reccomended tradespeople to homeowners
@@ -117,7 +96,7 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
               top: Dimensions.height60,
               bottom: Dimensions.height60,
             ),
-            height: 350,
+            height: 400,
             width: 400,
             child: PageView.builder(
               controller: pageController,
@@ -228,14 +207,15 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
               ),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: SvgPicture.asset(
-                    tradeType.svgIconPath,
-                    fit: BoxFit.cover,
-                    color: AppColors.buttonColor,
+                  child: Align(
+                    alignment: Alignment(0, -0.5),
+                    child: Icon(tradeType.icon,
+                        color: AppColors.buttonColor,
+                        size: 300.0),
                   ))),
         ),
         Positioned(
-          bottom: 0, // Set this to 0 instead of -50
+          bottom: 0,
           left: 0,
           right: 0,
           child: Container(
@@ -327,7 +307,10 @@ class _MainCarouselWidgetState extends State<MainCarouselWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          BigText(text: recommendedTradesPeople.name, size: 25, bold: true),
+                          BigText(
+                              text: recommendedTradesPeople.name,
+                              size: 25,
+                              bold: true),
                           SizedBox(height: Dimensions.height15),
                           SizedBox(height: Dimensions.height15),
                           Row(

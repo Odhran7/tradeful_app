@@ -19,40 +19,20 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Tradetype> tradeTypes = [
       Tradetype(
-        'Electrician',
-        'assets/images/electrician_icon.svg',
-        '105',
-        '200',
-        ['Install fixtures', 'Broken Freezer', 'Install heater'],
-      ),
-      Tradetype(
-        'Plumber',
-        'assets/images/plumber_icon.svg',
-        '56',
-        '153',
-        ['Leak', 'Clogged Drain', 'Install Fixtures'],
-      ),
-      Tradetype(
-        'Carpenter',
-        'assets/images/carpenter_icon.svg',
-        '48',
-        '100',
-        ['Custom build', 'Repairs', 'Internal Fittings'],
-      ),
-      Tradetype(
-        'Welder',
-        'assets/images/welder_icon.svg',
-        '12',
-        '255',
-        ['Gates', 'Farm yards', 'Commercial'],
-      ),
-      Tradetype(
-        'Photographer',
-        'assets/images/photographer_icon.svg',
-        '23',
-        '244',
-        ['Wedding', 'Portrait', 'Commercial'],
-      ),
+          'Electrician',
+          'assets/images/electrician_icon.svg',
+          '105',
+          '200',
+          ['Install fixtures', 'Broken Freezer', 'Install heater'],
+          Icons.electrical_services),
+      Tradetype('Plumber', 'assets/images/plumber_icon.svg', '56', '153',
+          ['Leak', 'Clogged Drain', 'Install Fixtures'], Icons.plumbing),
+      Tradetype('Carpenter', 'assets/images/carpenter_icon.svg', '48', '100',
+          ['Custom build', 'Repairs', 'Internal Fittings'], Icons.construction),
+      Tradetype('Welder', 'assets/images/welder_icon.svg', '12', '255',
+          ['Gates', 'Farm yards', 'Commercial'], Icons.build),
+      Tradetype('Photographer', 'assets/images/photographer_icon.svg', '23',
+          '244', ['Wedding', 'Portrait', 'Commercial'], Icons.camera_alt),
     ];
 
     return Scaffold(
@@ -62,8 +42,13 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
           children: [
             BigText(text: "I'm looking for: ", size: 30, bold: true),
             Container(
-              padding: EdgeInsets.only(top: Dimensions.height15, bottom: Dimensions.height15),
-              margin: EdgeInsets.only(bottom: Dimensions.height60, top: Dimensions.height60, left: Dimensions.width30, right: Dimensions.width30),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15, bottom: Dimensions.height15),
+                margin: EdgeInsets.only(
+                    bottom: Dimensions.height60,
+                    top: Dimensions.height60,
+                    left: Dimensions.width30,
+                    right: Dimensions.width30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: AppColors.iconWhite,
@@ -84,11 +69,13 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
                                 right: Dimensions.width15,
                                 bottom: Dimensions.height30),
                             child: Container(
-                              padding: EdgeInsets.only(top: Dimensions.height15, bottom: Dimensions.height15),
+                              padding: EdgeInsets.only(
+                                  top: Dimensions.height15,
+                                  bottom: Dimensions.height15),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                border: Border.all(color: Colors.black, width: 1.0)
-                              ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                      color: Colors.black, width: 1.0)),
                               child: AppColumnHomeOwnerWidget(
                                 tradeType: trade.tradeType,
                                 svgIconPath: trade.svgIconPath,
@@ -99,7 +86,8 @@ class OnboardingFinalHomeOwnerPage extends StatelessWidget {
                             )));
                   },
                 )),
-                BigButtonWidget(text: "Review", page: ReviewOnboardingHomeOwnerPage())
+            BigButtonWidget(
+                text: "Review", page: ReviewOnboardingHomeOwnerPage())
           ],
         ),
       ),
