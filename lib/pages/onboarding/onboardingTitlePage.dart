@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tradeful_app/pages/onboarding/onboardingOnePage.dart';
+import 'package:tradeful_app/utils/colors.dart';
 import 'package:tradeful_app/widgets/appBarOnboardingWidget.dart';
 import 'package:tradeful_app/widgets/big_text.dart';
 
@@ -57,6 +58,7 @@ class OnboardingTitlePage extends StatelessWidget {
               alignment: Alignment.center, // Adjust this as needed
               children: [
                 SvgPicture.asset("assets/images/blackBlob.svg",
+                color: AppColors.buttonColor,
                     height: 300, width: 300),
                 GestureDetector(
                   onTap: () {
