@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppConstants {
   static const String APP_NAME = "Tradeful_App";
   static const int APP_VERSION = 1;
+  static const String _baseUrl = "http://localhost:3000";
 
   static const kSendButtonTextStyle = TextStyle(
     color: Colors.lightBlueAccent,
