@@ -7,9 +7,10 @@ import 'big_text.dart';
 class FormEntryWidget extends StatelessWidget {
   final String text;
   final IconData icon;
+  TextEditingController? controller;
   Color? color;
   FormEntryWidget(
-      {super.key, required this.text, this.color = const Color(0xffa6a6a6), required this.icon});
+      {super.key, required this.text, this.color = const Color(0xffa6a6a6), required this.icon, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class FormEntryWidget extends StatelessWidget {
             color: color,
           ),
           child: TextField(
+            controller: controller ?? TextEditingController(),
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
               border: InputBorder.none,
